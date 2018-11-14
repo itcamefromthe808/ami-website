@@ -13,7 +13,7 @@ app.prepare()
     // collection detail route
     server.get('/collections/:id', (req, res) => {
       // TODO: reject non-parametized routes (redirect to index)
-      return app.render(req, res, '/collections', { id: req.params.id })
+      return app.render(req, res, '/collections/details', { id: req.params.id })
     })
 
     // TODO: 404 page?
