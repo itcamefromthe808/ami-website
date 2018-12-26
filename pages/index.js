@@ -8,12 +8,14 @@ import Grid from '../components/grid'
 
 
 const Index = () => (
-  <div class="wrapper">
-    <Head title="Work" />
-    <Nav />
+  <div className="wrapper">
+    <header>
+      <Head title="Work" />
+      <Nav />
 
-    <h1>AMI<br />JENNER</h1>
-    <h2>Photo Art Director</h2>
+      <h1>AMI<br />JENNER</h1>
+      <h2>Photo Art Director</h2>
+    </header>
 
     <Grid />
 

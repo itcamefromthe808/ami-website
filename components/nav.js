@@ -24,22 +24,31 @@ const Nav = () => (
     <style jsx>{`
       nav {
         text-align: center;
+        position:absolute;
+        bottom:0;
+        right:0;
       }
       ul {
         display: flex;
         justify-content: space-between;
       }
       nav > ul {
-        padding: 4px 16px;
+        padding: 0 2rem;
+        margin:0;
       }
       li {
         display: flex;
-        padding: 6px 8px;
+        padding: 0 1rem;
+        margin:0;
       }
       a {
-        color: #067df7;
+        color: #000;
         text-decoration: none;
-        font-size: 13px;
+        font-size: 1.8rem;
+        font-weight: 800;
+      }
+      a:hover {
+        text-decoration: underline;
       }
     `}</style>
   </nav>

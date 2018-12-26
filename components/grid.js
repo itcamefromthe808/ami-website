@@ -18,14 +18,16 @@ const collections = [
 })
 
 const Grid = () => (
-  <nav class="grid">
+  <nav className="grid">
     <ul>
       {collections.map(({ key, href, image, text }) => (
         <li key={key}>
           <div>
             <Link href={`/collections/${href}`}>
               <a>
-                <span>{text}</span>
+                <span className="text-container">
+                  <span className="grid-text">{text}</span>
+                </span>
                 <img src={`/static/grid/${image}`} />
               </a>
             </Link>
@@ -64,16 +66,27 @@ const Grid = () => (
         background-size:contain;
         background-position:top center;
       }
-      a > span {
-        transition: opacity 400ms ease-in-out;
-        opacity:0;
+      a .text-container {
+        display:block;
         position:absolute;
         width:100%;
         height:100%;
-        text-align:center;
         top:0;
-        color:white;
         z-index:1000;
+
+        text-align:center;
+        transition: opacity 400ms ease-in-out;
+        opacity:0;
+      }
+      a .grid-text {
+        position:absolute;
+        top:50%;
+        left:0;
+        width:calc(100% - 30px);
+        padding:15px;
+        transform:translateY(-50%);
+
+        color:white;
         font-size: 3.2rem;
         font-weight: 800;
         text-transform: uppercase;
@@ -89,7 +102,7 @@ const Grid = () => (
       a:hover > img {
         filter: grayscale(1);
       }
-      a:hover > span {
+      a:hover .text-container {
         opacity: 1;
       }
 

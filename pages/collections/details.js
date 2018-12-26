@@ -12,9 +12,11 @@ class Details extends React.Component {
 
   render() {
     return (
-      <div class="wrapper">
-        <Head title="Work" />
-        <Nav />
+      <div className="wrapper">
+        <header>
+          <Head title="Work" />
+          <Nav />
+        </header>
 
         <Collection id={this.props.collectionId} />
 
