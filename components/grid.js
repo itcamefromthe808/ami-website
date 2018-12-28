@@ -1,26 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
 
-// this will use getInitialProps
-const collections = [
-  { href: 'collection-three', image: 'sailor_moon_grid.jpg', text: 'Sailor Moon ' },
-  { href: 'collection-one', image: 'minnie_grid.jpg', text: 'Minnie Mouse NYFW' },
-  { href: 'collection-four', image: 'outlander_grid.jpg', text: 'Outlander' },
-  { href: 'collection-five', image: 'mary_poppins_grid.jpg', text: 'Mary Poppins' },
-  { href: 'collection-two', image: 'star_wars_grid.jpg', text: 'Star Wars' },
-  { href: 'collection-six', image: 'villains_grid.jpg', text: 'Disney Villans' },
-  { href: 'collection-seven', image: '', text: 'Collection Seven' },
-  { href: 'collection-eight', image: '', text: 'Collection Eight' },
-  { href: 'collection-nine', image: '', text: 'Collection Nine' }
-].map(link => {
-  link.key = `card-${link.href}`
-  return link
-})
-
-const Grid = () => (
+const Grid = (props) => (
   <nav className="grid">
     <ul>
-      {collections.map(({ key, href, image, text }) => (
+      {props.collections.map(({ key, href, grid, text }) => (
         <li key={key}>
           <div>
             <Link href={`/collections/${href}`}>
@@ -28,7 +12,7 @@ const Grid = () => (
                 <span className="text-container">
                   <span className="grid-text">{text}</span>
                 </span>
-                <img src={`/static/grid/${image}`} />
+                <img src={grid} />
               </a>
             </Link>
           </div>
@@ -99,11 +83,25 @@ const Grid = () => (
         top:0;
         left:0;
       }
+      a:after {
+        content:'';
+        position:absolute;
+        width:100%;
+        height:100%;
+        background:#000;
+        opacity:0;
+        transition:opacity 480ms ease-in-out;
+        left:0;
+        top:0;
+      }
       a:hover > img {
         filter: grayscale(1);
       }
       a:hover .text-container {
         opacity: 1;
+      }
+      a:hover:after {
+        opacity: 0.25;
       }
 
       @media (min-width: 768px) {
