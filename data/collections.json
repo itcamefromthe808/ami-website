@@ -41,12 +41,13 @@
     "text": "Hello Kitty",
     "details": "Hello kitty is awesome.",
     "images": [
+      "/static/collections/hello-kitty/181120_email_Hello_Kitty.jpg",
+      "/static/collections/hello-kitty/11579514_42082.jpg",
       "/static/collections/hello-kitty/11575307_41874.jpg",
       "/static/collections/hello-kitty/11576227_41920.jpg",
       "/static/collections/hello-kitty/11576227_41935.jpg",
       "/static/collections/hello-kitty/11579514_42028.jpg",
       "/static/collections/hello-kitty/11579514_42064.jpg",
-      "/static/collections/hello-kitty/11579514_42082.jpg",
       "/static/collections/hello-kitty/11579514_42106.jpg",
       "/static/collections/hello-kitty/11585803_42283.jpg",
       "/static/collections/hello-kitty/11585847_42163.jpg"

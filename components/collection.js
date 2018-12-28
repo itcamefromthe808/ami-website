@@ -27,6 +27,7 @@ class Collection extends React.Component {
 
     let items = new Map
     this.state.images.forEach( (item, idx) => {
+      console.log(idx, height, Math.ceil((item.ref.current.getBoundingClientRect().height+gap)/(height+gap)))
       items.set(idx, {
         image: item.image,
         rowSpan: `span ${Math.ceil((item.ref.current.getBoundingClientRect().height+gap)/(height+gap))}`,
@@ -34,7 +35,6 @@ class Collection extends React.Component {
       })
     })
 
-    console.log( 'yo!', items )
     this.setState({images: items})
   }
 
@@ -53,11 +53,10 @@ class Collection extends React.Component {
     // build the list of items in the collection
     this.state.images.forEach( (item, idx) => {
       list.push(
-        <li key={`col-${idx}`}>
-          <CollectionItem
-            {...item}
-          />
-        </li>
+        <CollectionItem
+          {...item}
+          key={`col-${idx}`}
+        />
       )
     })
 
@@ -66,18 +65,18 @@ class Collection extends React.Component {
         <h2> {this.props.collection.text} </h2>
         <p> {this.props.collection.details}</p>
 
-        <ul className="grid">
+        <div className="grid" >
           { list }
-        </ul>
+        </div>
 
         <style jsx>{`
-          ul {
+          .grid {
             display: grid;
             grid-gap: 30px;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            padding: 0;
-            list-style-type: none;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            grid-auto-rows: 30px;
           }
+
         `}</style>
       </div>
     )
