@@ -25,6 +25,9 @@ const Footer = () => (
       :global(header) {
         position:relative;
       }
+      footer {
+        padding-bottom:40px;
+      }
     `}</style>
   </footer>
 )

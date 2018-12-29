@@ -5,12 +5,13 @@ const CollectionItem = React.forwardRef((props, ref) => (
     style={{gridRowEnd: `${props.rowSpan}`}}
   >
     <img
-      src={props.image}
+      src={props.url}
       ref={ref}
       style={{
         width: "100%",
         display: "block"
       }}
+      onLoad={() => { props.imageLoaded(props.url) }}
     />
   </div>
 ))

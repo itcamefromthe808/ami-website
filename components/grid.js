@@ -29,16 +29,16 @@ const Grid = (props) => (
         flex-wrap: wrap;
         padding: 0;
         list-style-type: none;
-        margin-left: -15px;
-        margin-right: -15px;
+        margin:0 -15px -15px;
       }
       li {
         display: flex;
         flex:1 0 100%;
         list-style-type: none;
+        margin:15px 0;
       }
       li > div {
-        padding:15px;
+        padding:0 15px;
         width:100%;
       }
       a {

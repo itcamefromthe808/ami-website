@@ -8,15 +8,69 @@ class Collection extends React.Component {
       images: new Map()
     }
 
-    props.collection.images.map(( image ) => {
-      this.state.images.set( image, {
-        image: image,
+    props.collection.images.map(( url, idx ) => {
+      const ref = React.createRef()
+
+      this.state.images.set( url, {
+        url: "",
+        ref: ref,
         rowSpan: "auto",
-        ref: React.createRef()
+        loaded: false,
+        updated: false
       })
     })
   }
 
+  imageLoaded( loadedImage ) {
+    console.log('image loaded', loadedImage, this.isLoaded())
+
+    // make copy of entry
+    let allImages = new Map
+
+    for (let [url, image] of this.state.images) {
+      if (url === loadedImage) {
+        image.loaded = true
+      }
+
+      allImages.set( url, image )
+    }
+
+    this.setState({
+      images: allImages
+    })
+
+    if (this.isLoaded()) {
+      this.updateDimensions()
+    }
+
+  }
+
+  setImageURLs() {
+    let allImages = new Map
+
+    for (let [url, image] of this.state.images) {
+      allImages.set( url, {
+        ...image,
+        url: url
+      })
+
+      console.log(allImages.get(url))
+    }
+
+    this.setState({
+      images: allImages
+    })
+  }
+
+  isLoaded() {
+    let loaded = this.state.images.size > 0
+
+    for (let [url, image] of this.state.images) {
+      loaded &= image.loaded
+    }
+
+    return loaded
+  }
 
   // debounce or throttle this
   updateDimensions = () => {
@@ -25,21 +79,25 @@ class Collection extends React.Component {
           height = Number.isNaN(autorows) ? 0 : autorows,
           gap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'))
 
-    let items = new Map
-    this.state.images.forEach( (item, idx) => {
-      console.log(idx, height, Math.ceil((item.ref.current.getBoundingClientRect().height+gap)/(height+gap)))
-      items.set(idx, {
-        image: item.image,
-        rowSpan: `span ${Math.ceil((item.ref.current.getBoundingClientRect().height+gap)/(height+gap))}`,
-        ref: item.ref
-      })
-    })
+    let allImages = new Map
+    for (let [url, image] of this.state.images) {
+      let item = {...image}
+      if (image.loaded) {
+        item.rowSpan = `span ${Math.ceil((image.ref.current.getBoundingClientRect().height+gap)/(height+gap))}`
+        item.updated = true
+      }
 
-    this.setState({images: items})
+      allImages.set(url, item)
+    }
+
+    this.setState({
+      images: allImages
+    })
+    console.log("updated")
   }
 
   componentDidMount() {
-    this.updateDimensions()
+    this.setImageURLs()
     window.addEventListener("resize", this.updateDimensions)
   }
 
@@ -51,19 +109,26 @@ class Collection extends React.Component {
     let list = []
 
     // build the list of items in the collection
-    this.state.images.forEach( (item, idx) => {
+    for (let [url, image] of this.state.images) {
       list.push(
         <CollectionItem
-          {...item}
-          key={`col-${idx}`}
+          key={`col-${url}`}
+          rowSpan={image.rowSpan}
+          url={image.url}
+          imageLoaded={() => { this.imageLoaded(url) }}
+          ref={image.ref}
         />
       )
-    })
+    }
 
     return (
       <div className="collection details">
         <h2> {this.props.collection.text} </h2>
         <p> {this.props.collection.details}</p>
+
+        <span style={{
+            "fontSize": "3.2rem"
+        }}>"Loading..."</span>
 
         <div className="grid" >
           { list }
@@ -76,7 +141,6 @@ class Collection extends React.Component {
             grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
             grid-auto-rows: 30px;
           }
-
         `}</style>
       </div>
     )
