@@ -168,6 +168,7 @@ class Collection extends React.Component {
             text-align: center;
             position: absolute;
             width: 100%;
+            margin-top: 3rem;
           }
           .loading-message.is-hidden {
             opacity:0;
