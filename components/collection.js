@@ -5,9 +5,15 @@ class Collection extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      images: new Map()
+      images: new Map(),
+      updated: false
     }
 
+    // initialize state as a map
+    // the key saves the image URL which we set later
+    // that forces the images to trigger the onload event
+    // which we then use to trigger updateDimensions
+    // could use an array here and add an extra property on the object instead
     props.collection.images.map(( url, idx ) => {
       const ref = React.createRef()
 
@@ -22,9 +28,6 @@ class Collection extends React.Component {
   }
 
   imageLoaded( loadedImage ) {
-    console.log('image loaded', loadedImage, this.isLoaded())
-
-    // make copy of entry
     let allImages = new Map
 
     for (let [url, image] of this.state.images) {
@@ -39,10 +42,10 @@ class Collection extends React.Component {
       images: allImages
     })
 
+    // trigger update when all images are loaded
     if (this.isLoaded()) {
       this.updateDimensions()
     }
-
   }
 
   setImageURLs() {
@@ -53,8 +56,6 @@ class Collection extends React.Component {
         ...image,
         url: url
       })
-
-      console.log(allImages.get(url))
     }
 
     this.setState({
@@ -91,7 +92,8 @@ class Collection extends React.Component {
     }
 
     this.setState({
-      images: allImages
+      images: allImages,
+      updated: true
     })
     console.log("updated")
   }
@@ -123,23 +125,52 @@ class Collection extends React.Component {
 
     return (
       <div className="collection details">
-        <h2> {this.props.collection.text} </h2>
+        <h2> {this.props.collection.text} Collection</h2>
         <p> {this.props.collection.details}</p>
 
-        <span style={{
-            "fontSize": "3.2rem"
-        }}>"Loading..."</span>
+        <div className={`loading-message${this.state.updated? " is-hidden" : ""}`}>
+          Loading...
+        </div>
 
-        <div className="grid" >
+        <div className={`grid${!this.state.updated? " is-hidden" : ""}`} >
           { list }
         </div>
 
         <style jsx>{`
+          .collection {
+            position: relative;
+            border-top: .1rem solid #000;
+          }
+          h2 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin:2rem 0 0;
+          }
+          p {
+            margin-top:0;
+          }
+
           .grid {
             display: grid;
             grid-gap: 30px;
             grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            grid-auto-rows: 30px;
+            grid-auto-rows: 5px;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+          }
+          .grid.is-hidden {
+            opacity: 0;
+          }
+
+          .loading-message {
+            font-size: 3.2rem;
+            opacity: 1;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+          }
+          .loading-message.is-hidden {
+            opacity:0;
           }
         `}</style>
       </div>
