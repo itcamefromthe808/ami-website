@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
-import Head from '../../components/head'
-import Nav from '../../components/nav'
-import Footer from '../../components/footer'
-import Collection from '../../components/collection'
-import collectionData from '../../data/collections.json'
+import Head from '../components/head'
+import Nav from '../components/nav'
+import Footer from '../components/footer'
+import Collection from '../components/collection'
+import collectionData from '../data/collections.json'
 
 class Details extends React.Component {
   static getInitialProps ({ query: { id } }) {

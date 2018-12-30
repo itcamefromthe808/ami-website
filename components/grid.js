@@ -7,7 +7,7 @@ const Grid = (props) => (
       {props.collections.map(({ key, href, grid, text }) => (
         <li key={key}>
           <div>
-            <Link href={`/collections/${href}`}>
+            <Link href={`/collection?id=${href}`} as={`/collections/${href}`} prefetch>
               <a>
                 <span className="text-container">
                   <span className="grid-text">{text}</span>
