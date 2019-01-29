@@ -1,32 +1,18 @@
 import React from 'react'
 import Link from 'next/link'
 
-// this will use getInitialProps
-const collections = [
-  { href: 'collection-three', image: 'sailor_moon_grid.jpg', text: 'Sailor Moon ' },
-  { href: 'collection-one', image: 'minnie_grid.jpg', text: 'Minnie Mouse NYFW' },
-  { href: 'collection-four', image: 'outlander_grid.jpg', text: 'Outlander' },
-  { href: 'collection-five', image: 'mary_poppins_grid.jpg', text: 'Mary Poppins' },
-  { href: 'collection-two', image: 'star_wars_grid.jpg', text: 'Star Wars' },
-  { href: 'collection-six', image: 'villains_grid.jpg', text: 'Disney Villans' },
-  { href: 'collection-seven', image: '', text: 'Collection Seven' },
-  { href: 'collection-eight', image: '', text: 'Collection Eight' },
-  { href: 'collection-nine', image: '', text: 'Collection Nine' }
-].map(link => {
-  link.key = `card-${link.href}`
-  return link
-})
-
-const Grid = () => (
-  <nav class="grid">
+const Grid = (props) => (
+  <nav className="grid">
     <ul>
-      {collections.map(({ key, href, image, text }) => (
+      {props.collections.map(({ key, href, grid, text }) => (
         <li key={key}>
           <div>
-            <Link href={`/collections/${href}`}>
+            <Link href={`/collection?id=${href}`} as={`/collections/${href}`} prefetch>
               <a>
-                <span>{text}</span>
-                <img src={`/static/grid/${image}`} />
+                <span className="text-container">
+                  <span className="grid-text">{text}</span>
+                </span>
+                <img src={grid} />
               </a>
             </Link>
           </div>
@@ -43,16 +29,16 @@ const Grid = () => (
         flex-wrap: wrap;
         padding: 0;
         list-style-type: none;
-        margin-left: -15px;
-        margin-right: -15px;
+        margin:0 -15px -15px;
       }
       li {
         display: flex;
         flex:1 0 100%;
         list-style-type: none;
+        margin:15px 0;
       }
       li > div {
-        padding:15px;
+        padding:0 15px;
         width:100%;
       }
       a {
@@ -64,16 +50,27 @@ const Grid = () => (
         background-size:contain;
         background-position:top center;
       }
-      a > span {
-        transition: opacity 400ms ease-in-out;
-        opacity:0;
+      a .text-container {
+        display:block;
         position:absolute;
         width:100%;
         height:100%;
-        text-align:center;
         top:0;
-        color:white;
         z-index:1000;
+
+        text-align:center;
+        transition: opacity 400ms ease-in-out;
+        opacity:0;
+      }
+      a .grid-text {
+        position:absolute;
+        top:50%;
+        left:0;
+        width:calc(100% - 30px);
+        padding:15px;
+        transform:translateY(-50%);
+
+        color:white;
         font-size: 3.2rem;
         font-weight: 800;
         text-transform: uppercase;
@@ -86,11 +83,25 @@ const Grid = () => (
         top:0;
         left:0;
       }
+      a:after {
+        content:'';
+        position:absolute;
+        width:100%;
+        height:100%;
+        background:#000;
+        opacity:0;
+        transition:opacity 480ms ease-in-out;
+        left:0;
+        top:0;
+      }
       a:hover > img {
         filter: grayscale(1);
       }
-      a:hover > span {
+      a:hover .text-container {
         opacity: 1;
+      }
+      a:hover:after {
+        opacity: 0.25;
       }
 
       @media (min-width: 768px) {

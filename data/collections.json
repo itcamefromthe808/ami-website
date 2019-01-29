@@ -1,0 +1,101 @@
+[
+  {
+    "href": "sailor-moon",
+    "grid": "/static/grid/sailor_moon_grid.jpg",
+    "text": "Sailor Moon",
+    "details": "Toei animation licensing with Torrid.",
+    "images": [
+      "/static/collections/sailor-moon/181213_email_Sailor_Moon_animation.gif",
+      "/static/collections/sailor-moon/11579523_41516.jpg",
+      "/static/collections/sailor-moon/11575335_41240.jpg",
+      "/static/collections/sailor-moon/11575335_41350.jpg",
+      "/static/collections/sailor-moon/11579523_41662.jpg",
+      "/static/collections/sailor-moon/11575335_41179.jpg",
+      "/static/collections/sailor-moon/11579523_41699.jpg"
+    ]
+  },
+  {
+    "href": "minnie-mouse",
+    "grid": "/static/grid/minnie_grid.jpg",
+    "text": "Minnie Mouse NYFW",
+    "images": []
+  },
+  {
+    "href": "outlander",
+    "grid": "/static/grid/outlander_grid.jpg",
+    "text": "Outlander",
+    "images": []
+  },
+  {
+    "href": "hello-kitty",
+    "grid": "/static/grid/hello_kitty_grid.jpg",
+    "text": "Hello Kitty",
+    "details": "Sanrio CO. licensing collection with Torrid.",
+    "images": [
+      "/static/collections/hello-kitty/181120_email_Hello_Kitty.jpg",
+      "/static/collections/hello-kitty/11579514_42082.jpg",
+      "/static/collections/hello-kitty/11575307_41874.jpg",
+      "/static/collections/hello-kitty/11576227_41920.jpg",
+      "/static/collections/hello-kitty/11576227_41935.jpg",
+      "/static/collections/hello-kitty/11579514_42028.jpg",
+      "/static/collections/hello-kitty/11579514_42064.jpg",
+      "/static/collections/hello-kitty/11579514_42106.jpg",
+      "/static/collections/hello-kitty/11585803_42283.jpg",
+      "/static/collections/hello-kitty/11585847_42163.jpg"
+    ]
+  },
+  {
+    "href": "star-wars",
+    "grid": "/static/grid/star_wars_grid.jpg",
+    "text": "Star Wars",
+    "images": [
+      "/static/collections/star-wars/181204_Social_Star_Wars_Story_1_1080x1920.jpg",
+      "/static/collections/star-wars/11652240_0491.jpg",
+      "/static/collections/star-wars/11652240_0343.jpg",
+      "/static/collections/star-wars/11652240_0513.jpg",
+      "/static/collections/star-wars/11655408_0209.jpg"
+    ]
+  },
+  {
+    "href": "disney-villains",
+    "grid": "/static/grid/villains_grid.jpg",
+    "text": "Disney Villains",
+    "images": []
+  },
+  {
+    "href": "collection-seven",
+    "grid": "",
+    "text": "Collection Seven",
+    "images": []
+  },
+  {
+    "href": "collection-eight",
+    "grid": "",
+    "text": "Collection Eight",
+    "images": []
+  },
+  {
+    "href": "collection-nine",
+    "grid": "",
+    "text": "Collection Nine",
+    "images": []
+  },
+  {
+    "href": "collection-ten",
+    "grid": "",
+    "text": "Collection Ten",
+    "images": []
+  },
+  {
+    "href": "collection-eleven",
+    "grid": "",
+    "text": "Collection Eleven",
+    "images": []
+  },
+  {
+    "href": "collection-twelve",
+    "grid": "",
+    "text": "Collection Twelve",
+    "images": []
+  }
+]

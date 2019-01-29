@@ -12,11 +12,23 @@ const Footer = () => (
       :global(h1) {
         font-size: 3.2rem;
         line-height: 1.2;
+        margin-bottom: 0;
+      }
+      :global(h2) {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        margin-top: 0;
       }
       :global(.wrapper) {
         max-width:1200px;
         margin:0 auto;
         width:75%;
+      }
+      :global(header) {
+        position:relative;
+      }
+      footer {
+        padding-bottom:40px;
       }
     `}</style>
   </footer>
