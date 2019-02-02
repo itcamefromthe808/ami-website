@@ -153,7 +153,7 @@ class Collection extends React.Component {
           .grid {
             display: grid;
             grid-gap: 30px;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             grid-auto-rows: 5px;
             opacity: 1;
             transition: opacity 1s ease-in-out;

@@ -20,10 +20,9 @@ class Details extends React.Component {
       <div className="wrapper">
       <header>
         <Head title="Work" />
-        <Nav />
-
         <h1>AMI<br />JENNER</h1>
         <h2>Photo Art Director</h2>
+        <Nav />
       </header>
 
         <Collection
