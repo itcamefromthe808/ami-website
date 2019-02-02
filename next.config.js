@@ -5,9 +5,12 @@ module.exports = {
       fs: 'empty'
     }
 
-    // TODO: add dynamic routes for export
-    // do this later. leave it client side for now
-
     return config
+  },
+  // dynamic routes for export
+  exportPathMap: function () {
+    return {
+      '/': { page: '/' }
+    }
   }
 }
