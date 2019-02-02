@@ -23,22 +23,17 @@ const Nav = () => (
 
     <style jsx>{`
       nav {
-        text-align: center;
-        position:absolute;
-        bottom:0;
-        right:0;
+        text-align: left;
       }
       ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 0 2rem;
+        list-style-type: none;
+        padding: 0;
         margin:0;
       }
       li {
-        display: flex;
-        padding: 0 1rem;
+        display: inline-block;
+        list-style-type: none;
+        padding: 0 1rem 0 0;
         margin:0;
       }
       a {
@@ -49,6 +44,23 @@ const Nav = () => (
       }
       a:hover {
         text-decoration: underline;
+      }
+      @media (min-width: 768px) {
+        nav {
+          text-align: center;
+          position:absolute;
+          bottom:0;
+          right:0;
+        }
+        ul {
+          display: flex;
+          justify-content: space-between;
+          padding: 0 2rem;
+        }
+        li {
+          display: flex;
+          padding: 0 1rem;
+        }
       }
     `}</style>
   </nav>

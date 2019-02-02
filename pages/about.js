@@ -9,9 +9,8 @@ const About = () => (
   <div className="wrapper">
     <header>
       <Head title="About" />
-      <Nav />
-
       <h1>The About Page</h1>
+      <Nav />
     </header>
 
     <Footer />
