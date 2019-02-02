@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import Router from 'next/router'
 import Head from '../components/head'
 import Nav from '../components/nav'
 import Footer from '../components/footer'
@@ -9,14 +8,10 @@ import collectionData from '../data/collections.json'
 
 class Details extends React.Component {
   static getInitialProps ({ query: { id } }) {
-    if ( id ) {
-      return {
-        collection: collectionData.find(col => {
-          return (col.href === id)
-        })
-      }
-    } else {
-      Router.push('/')
+    return {
+      collection: collectionData.find(col => {
+        return (col.href === id)
+      })
     }
   }
 
