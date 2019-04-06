@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 const Grid = (props) => (
   <nav className="grid">
+    { props.children }
     <ul>
       {props.collections.map(({ key, href, grid, text }) => (
         <li key={key}>
