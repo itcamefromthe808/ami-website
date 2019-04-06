@@ -1,5 +1,6 @@
 import React from 'react'
 import CollectionItem from './collection-item'
+import Loading from './loading'
 
 class Collection extends React.Component {
   constructor(props) {
@@ -129,7 +130,7 @@ class Collection extends React.Component {
         <p> {this.props.collection.details}</p>
 
         <div className={`loading-message${this.state.updated? " is-hidden" : ""}`}>
-          Loading...
+          <Loading items={[true,false,true]} />
         </div>
 
         <div className={`grid${!this.state.updated? " is-hidden" : ""}`} >
