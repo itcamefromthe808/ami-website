@@ -5,20 +5,33 @@ import Loading from './loading'
 class Collection extends React.Component {
   constructor(props) {
     super(props)
+
     this.state = {
-      images: new Map(),
-      updated: false
+      collection: this.getCollection( props.id ),
+      updated: false,
+      id: props.id
     }
+  }
+
+  findCurrentCollection( id ) {
+    return this.props.collections.find(col => {
+      return (col.href === id)
+    })
+  }
+
+  getCollection( id ) {
+    let collectionToLoad = this.findCurrentCollection( id )
+
+    let imageSet = new Map()
 
     // initialize state as a map
     // the key saves the image URL which we set later
     // that forces the images to trigger the onload event
     // which we then use to trigger updateDimensions
-    // could use an array here and add an extra property on the object instead
-    props.collection.images.map(( url, idx ) => {
+    collectionToLoad.images.map(( url, idx ) => {
       const ref = React.createRef()
 
-      this.state.images.set( url, {
+      imageSet.set( url, {
         url: "",
         ref: ref,
         rowSpan: "auto",
@@ -26,21 +39,23 @@ class Collection extends React.Component {
         updated: false
       })
     })
+
+    return imageSet
   }
 
   imageLoaded( loadedImage ) {
-    let allImages = new Map
+    let imageCollection = new Map
 
-    for (let [url, image] of this.state.images) {
+    for (let [url, image] of this.state.collection) {
       if (url === loadedImage) {
         image.loaded = true
       }
 
-      allImages.set( url, image )
+      imageCollection.set( url, image )
     }
 
     this.setState({
-      images: allImages
+      collection: imageCollection,
     })
 
     // trigger update when all images are loaded
@@ -49,25 +64,28 @@ class Collection extends React.Component {
     }
   }
 
-  setImageURLs() {
-    let allImages = new Map
+  setImageURLs( images ) {
+    let imageCollection = new Map
 
-    for (let [url, image] of this.state.images) {
-      allImages.set( url, {
+    for (let [url, image] of images) {
+      imageCollection.set( url, {
         ...image,
-        url: url
+        url: url,
+        loaded: false,
+        updated: false,
       })
     }
 
     this.setState({
-      images: allImages
+      collection: imageCollection,
+      updated: false,
     })
   }
 
   isLoaded() {
-    let loaded = this.state.images.size > 0
+    let loaded = this.state.collection.size > 0
 
-    for (let [url, image] of this.state.images) {
+    for (let [url, image] of this.state.collection) {
       loaded &= image.loaded
     }
 
@@ -81,26 +99,27 @@ class Collection extends React.Component {
           height = Number.isNaN(autorows) ? 0 : autorows,
           gap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'))
 
-    let allImages = new Map
-    for (let [url, image] of this.state.images) {
+    let imageCollection = new Map
+    for (let [url, image] of this.state.collection) {
       let item = {...image}
       if (image.loaded) {
         item.rowSpan = `span ${Math.ceil((image.ref.current.getBoundingClientRect().height+gap)/(height+gap))}`
         item.updated = true
       }
 
-      allImages.set(url, item)
+      imageCollection.set(url, item)
     }
 
     this.setState({
-      images: allImages,
+      collection: imageCollection,
       updated: true
     })
+
     console.log("updated")
   }
 
   componentDidMount() {
-    this.setImageURLs()
+    this.setImageURLs( this.state.collection )
     window.addEventListener("resize", this.updateDimensions)
   }
 
@@ -108,11 +127,19 @@ class Collection extends React.Component {
     window.removeEventListener("resize", this.updateDimensions)
   }
 
+  // figure out when to reload on collection changes (routing)
+  componentDidUpdate( prevProps ) {
+    if ( this.props.id !== prevProps.id ) {
+      this.setImageURLs( this.getCollection( this.props.id ) )
+    }
+  }
+
   render() {
     let list = []
+    let collectionToLoad = this.findCurrentCollection( this.props.id )
 
     // build the list of items in the collection
-    for (let [url, image] of this.state.images) {
+    for (let [url, image] of this.state.collection) {
       list.push(
         <CollectionItem
           key={`col-${url}`}
@@ -126,8 +153,8 @@ class Collection extends React.Component {
 
     return (
       <div className="collection details">
-        <h2> {this.props.collection.text} Collection</h2>
-        <p> {this.props.collection.details}</p>
+        <h2> { collectionToLoad.text } Collection</h2>
+        <p> { collectionToLoad.details }</p>
 
         <div className={`loading-message${this.state.updated? " is-hidden" : ""}`}>
           <Loading items={[true,false,true]} />
@@ -161,6 +188,7 @@ class Collection extends React.Component {
           }
           .grid.is-hidden {
             opacity: 0;
+            transition: none;
           }
 
           .loading-message {

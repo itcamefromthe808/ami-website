@@ -4,7 +4,7 @@ import Head from '../components/head'
 import Nav from '../components/nav'
 import Footer from '../components/footer'
 import Collection from '../components/collection'
-import BackToWork from '../components/back-to-work'
+import Grid from '../components/grid'
 import collectionData from '../data/collections.json'
 
 class Details extends React.Component {
@@ -14,6 +14,7 @@ class Details extends React.Component {
       collection: collectionData.find(col => {
         return (col.href === id)
       }),
+      id: id,
       collections: collectionData.map(link => {
         link.key = `card-${link.href}`
         return link
@@ -32,12 +33,22 @@ class Details extends React.Component {
         </header>
 
         <Collection
-          collection={ this.props.collection }
+          collections={ this.props.collections }
+          id={ this.props.id }
         />
 
-        <BackToWork
+        <Grid
           collections={ this.props.collections }
-        />
+        >
+          <h2>Back To Work</h2>
+
+          <style jsx>{`
+            nav {
+              text-align: left;
+              margin-top: 30px;
+            }
+          `}</style>
+        </Grid>
 
         <Footer />
       </div>
