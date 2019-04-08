@@ -11,16 +11,12 @@ module.exports = {
   },
   // dynamic routes for export
   exportPathMap: function (defaultMapPath) {
-    let map = [
-      {
-        '/': { page: '/' }
-      }
-    ]
+    let map = {
+      '/': { page: '/' }
+    }
 
     data.forEach( collection => {
-      map.push({
-        [collection.href.toString()]: { page: '/collection', query: { id: collection.href.toString() } }
-      })
+      map[collection.href.toString()]= { page: '/collection', query: { id: collection.href.toString() } }
     })
 
     console.log('debug', map, data)
