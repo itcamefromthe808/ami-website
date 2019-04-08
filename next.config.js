@@ -19,9 +19,11 @@ module.exports = {
 
     data.forEach( collection => {
       map.push({
-        [collection.href.toString()]: { page: '/collection', query: { id: collection.href } }
+        [collection.href.toString()]: { page: '/collection', query: { id: collection.href.toString() } }
       })
     })
+
+    console.log('debug', map, data)
 
     return map
   }
