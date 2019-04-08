@@ -11,14 +11,8 @@ class Details extends React.Component {
   // ugleeee
   static getInitialProps ({ query: { id } }) {
     return {
-      collection: collectionData.find(col => {
-        return (col.href === id)
-      }),
       id: id,
-      collections: collectionData.map(link => {
-        link.key = `card-${link.href}`
-        return link
-      })
+      collections: collectionData
     }
   }
 

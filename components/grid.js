@@ -5,20 +5,24 @@ const Grid = (props) => (
   <nav className="grid">
     { props.children }
     <ul>
-      {props.collections.map(({ key, href, grid, text }) => (
-        <li key={key}>
-          <div>
-            <Link href={`/collection?id=${href}`} as={`/collections/${href}`}>
-              <a>
-                <span className="text-container">
-                  <span className="grid-text">{text}</span>
-                </span>
-                <img src={grid} />
-              </a>
-            </Link>
-          </div>
-        </li>
-      ))}
+      {props.collections.map(({ href, grid, text }) => {
+        let key = `col-${ href }`
+
+        return (
+          <li key={key}>
+            <div>
+              <Link href={`/collection?id=${href}`} as={`/collections/${href}`}>
+                <a>
+                  <span className="text-container">
+                    <span className="grid-text">{text}</span>
+                  </span>
+                  <img src={grid} />
+                </a>
+              </Link>
+            </div>
+          </li>
+        )
+      })}
     </ul>
 
     <style jsx>{`
