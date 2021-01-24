@@ -20,6 +20,7 @@ function Modal(props) {
     (
       <div className="modal" onClick={props.onClick}>
         { props.children }
+        <span className="sr-only">Close</span>
       </div>
     ),
     el.current

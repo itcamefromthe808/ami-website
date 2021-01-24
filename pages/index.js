@@ -38,7 +38,7 @@ function Index( props ) {
         </header>
 
         <div className={"column-right"}>
-          <Grid images={collections[selected].images} />
+          <Grid images={collections[selected].images} folder={collections[selected].folder}/>
         </div>
       </div>
       <Footer />

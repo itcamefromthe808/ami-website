@@ -4,7 +4,8 @@ import css from './sass/grid.module.scss'
 
 const Grid = props => {
   const {
-    images
+    images,
+    folder,
   } = props
 
   const columns = images?.length? [
@@ -18,13 +19,13 @@ const Grid = props => {
       { images?.length? (
         <>
           <div className={css['grid-column-1']}>
-            { columns[0].map( (image,key) => <Tile key={key} image={image} /> ) }
+            { columns[0].map( (image,key) => <Tile key={key} image={image} folder={folder} /> ) }
           </div>
           <div className={css['grid-column-2']}>
-            { columns[1].map( (image,key) => <Tile key={key} image={image} /> ) }
+            { columns[1].map( (image,key) => <Tile key={key} image={image} folder={folder} /> ) }
           </div>
           <div className={css['grid-column-3']}>
-            { columns[2].map( (image,key) => <Tile key={key} image={image} /> ) }
+            { columns[2].map( (image,key) => <Tile key={key} image={image} folder={folder} /> ) }
           </div>
         </>
       ): "Loading..."}

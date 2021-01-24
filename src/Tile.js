@@ -6,6 +6,7 @@ function Tile(props) {
   const {
     className,
     image,
+    folder
   } = props
   const [openModal, setModalState] = useState(false)
 
@@ -20,11 +21,11 @@ function Tile(props) {
     >
       <img
         className={css.image}
-        src={image.thumb}
+        src={`${folder}${image.thumb}`}
       />
       { openModal && (
         <Modal onClick={ toggleModal }>
-          <img src={image.full} />
+          <img src={`${folder}${image.full}`} />
         </Modal>
       )}
     </div>
