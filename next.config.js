@@ -1,24 +1,7 @@
-let data = require('./data/collections.json')
+const path = require('path')
 
 module.exports = {
-  webpack: config => {
-    // Fixes npm packages that depend on `fs` module
-    config.node = {
-      fs: 'empty'
-    }
-
-    return config
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'src', 'sass')],
   },
-  // dynamic routes for export
-  exportPathMap: function (defaultMapPath) {
-    let map = {
-      '/': { page: '/' }
-    }
-
-    data.forEach( collection => {
-      map['/collections/' + collection.href]= { page: '/collection', query: { id: collection.href.toString() } }
-    })
-
-    return map
-  }
 }

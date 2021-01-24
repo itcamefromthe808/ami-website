@@ -1,0 +1,13 @@
+.grid {
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-column-gap:15px;
+}
+
+@for $i from 1 through 3 {
+  .grid-column-#{$i} {
+    grid-column:#{$i};
+    display:flex;
+    flex-direction:column;
+  }
+}

@@ -28,11 +28,11 @@ class Collection extends React.Component {
     // the key saves the image URL which we set later
     // that forces the images to trigger the onload event
     // which we then use to trigger updateDimensions
-    collectionToLoad.images.map(( url, idx ) => {
+    collectionToLoad.images.map(( src, idx ) => {
       const ref = React.createRef()
 
-      imageSet.set( url, {
-        url: "",
+      imageSet.set( src, {
+        src: "",
         ref: ref,
         rowSpan: "auto",
         loaded: false,
@@ -46,12 +46,12 @@ class Collection extends React.Component {
   imageLoaded( loadedImage ) {
     let imageCollection = new Map
 
-    for (let [url, image] of this.state.collection) {
-      if (url === loadedImage) {
+    for (let [src, image] of this.state.collection) {
+      if (src === loadedImage) {
         image.loaded = true
       }
 
-      imageCollection.set( url, image )
+      imageCollection.set( src, image )
     }
 
     this.setState({
@@ -67,10 +67,10 @@ class Collection extends React.Component {
   setImageURLs( images ) {
     let imageCollection = new Map
 
-    for (let [url, image] of images) {
-      imageCollection.set( url, {
+    for (let [src, image] of images) {
+      imageCollection.set( src, {
         ...image,
-        url: url,
+        src,
         loaded: false,
         updated: false,
       })
@@ -85,7 +85,7 @@ class Collection extends React.Component {
   isLoaded() {
     let loaded = this.state.collection.size > 0
 
-    for (let [url, image] of this.state.collection) {
+    for (let [src, image] of this.state.collection) {
       loaded &= image.loaded
     }
 
@@ -100,14 +100,14 @@ class Collection extends React.Component {
           gap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'))
 
     let imageCollection = new Map
-    for (let [url, image] of this.state.collection) {
+    for (let [src, image] of this.state.collection) {
       let item = {...image}
       if (image.loaded) {
         item.rowSpan = `span ${Math.ceil((image.ref.current.getBoundingClientRect().height+gap)/(height+gap))}`
         item.updated = true
       }
 
-      imageCollection.set(url, item)
+      imageCollection.set(src, item)
     }
 
     this.setState({
@@ -136,19 +136,22 @@ class Collection extends React.Component {
 
   render() {
     let list = []
+    let loaded = []
     let collectionToLoad = this.findCurrentCollection( this.props.id )
 
     // build the list of items in the collection
-    for (let [url, image] of this.state.collection) {
+    for (let [src, image] of this.state.collection) {
       list.push(
         <CollectionItem
-          key={`col-${url}`}
+          key={`col-${src}`}
           rowSpan={image.rowSpan}
-          url={image.url}
-          imageLoaded={() => { this.imageLoaded(url) }}
+          src={image.src}
+          imageLoaded={() => { this.imageLoaded(src) }}
           ref={image.ref}
         />
       )
+
+      loaded.push( image.loaded )
     }
 
     return (
@@ -157,7 +160,7 @@ class Collection extends React.Component {
         <p> { collectionToLoad.details }</p>
 
         <div className={`loading-message${this.state.updated? " is-hidden" : ""}`}>
-          <Loading items={[true,false,true]} />
+          <Loading items={ loaded } />
         </div>
 
         <div className={`grid${!this.state.updated? " is-hidden" : ""}`} >

@@ -1,0 +1,25 @@
+.nav {
+  text-align: left;
+  margin-top:5rem;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin:0;
+  }
+
+  li {
+    display: block;
+    white-space:nowrap;
+    list-style-type: none;
+    padding: 0 1rem 0 0;
+    margin:1rem 0;
+    font-size: 1.3rem;
+    font-weight: 800;
+
+    &.selected, &:hover {
+      cursor:pointer;
+      text-decoration: underline;
+    }
+  }
+}
