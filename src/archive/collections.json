@@ -1,0 +1,182 @@
+[
+  {
+    "href": "sailor-moon",
+    "grid": "/static/grid/sailor_moon_grid.jpg",
+    "text": "Sailor Moon",
+    "details": "Toei animation licensing with Torrid.",
+    "images": [
+      "/static/collections/sailor-moon/181213_email_Sailor_Moon_animation.gif",
+      "/static/collections/sailor-moon/11579523_41516.jpg",
+      "/static/collections/sailor-moon/11575335_41240.jpg",
+      "/static/collections/sailor-moon/11575335_41350.jpg",
+      "/static/collections/sailor-moon/11579523_41662.jpg",
+      "/static/collections/sailor-moon/11575335_41179.jpg"
+    ]
+  },
+  {
+    "href": "outlander-intimates",
+    "grid": "/static/grid/outlander_intimates_grid.jpg",
+    "text": "Outlander Intimates",
+    "details": "Outlander Intimates",
+    "images": [
+      "/static/collections/outlander-intimates/190115_HP_Outlander_Intimates_1440x530.jpg",
+      "/static/collections/outlander-intimates/11614663_0483.jpg",
+      "/static/collections/outlander-intimates/11614672_0986.jpg",
+      "/static/collections/outlander-intimates/11614711_0888.jpg",
+      "/static/collections/outlander-intimates/11614720_0202.jpg",
+      "/static/collections/outlander-intimates/11614720_0378.jpg",
+      "/static/collections/outlander-intimates/11614772_0045.jpg"
+    ]
+  },
+  {
+    "href": "outlander",
+    "grid": "/static/grid/outlander_grid.jpg",
+    "text": "Outlander",
+    "images": [
+      "/static/collections/outlander/6036_OUTLANDER_GONDOLA_17x11.jpg",
+      "/static/collections/outlander/180919_TD_JV_OUTLANDER_DTR_0118.jpg",
+      "/static/collections/outlander/180919_TD_JV_OUTLANDER_DTR_LOOK_2_0499.jpg",
+      "/static/collections/outlander/180919_TD_JV_OUTLANDER_DTR_LOOK_2_1104_V2_EXT.jpg",
+      "/static/collections/outlander/180919_TD_JV_OUTLANDER_DTR_LOOK_2_1271.jpg",
+      "/static/collections/outlander/180919_TD_JV_OUTLANDER_DTR_LOOK_2_1475.jpg",
+      "/static/collections/outlander/180919_TD_JV_OUTLANDER_DTR_LOOK_2_1687.jpg",
+      "/static/collections/outlander/180919_TD_JV_OUTLANDER_DTR_LOOK_7_1909.jpg",
+      "/static/collections/outlander/180919_TD_JV_OUTLANDER_DTR_LOOK_9_2309.jpg",
+      "/static/collections/outlander/180919_TD_JV_OUTLANDER_DTR_LOOK_9_2439.jpg",
+      "/static/collections/outlander/180919_TD_JV_OUTLANDER_DTR_LOOK_9_2577.jpg"
+    ]
+  },
+  {
+    "href": "minnie-mouse",
+    "grid": "/static/grid/minnie_grid.jpg",
+    "text": "Minnie Mouse NYFW",
+    "images": [
+      "/static/collections/minnie-nyfw/180731_TD_JV_NYFW_MINNIE_DTR8629.jpg",
+      "/static/collections/minnie-nyfw/180731_TD_JV_NYFW_MINNIE_DTR8742.jpg",
+      "/static/collections/minnie-nyfw/180731_TD_JV_NYFW_MINNIE_DTR8819.jpg",
+      "/static/collections/minnie-nyfw/180731_TD_JV_NYFW_MINNIE_DTR9283.jpg",
+      "/static/collections/minnie-nyfw/180731_TD_JV_NYFW_MINNIE_DTR9484.jpg",
+      "/static/collections/minnie-nyfw/180731_TD_JV_NYFW_MINNIE_DTR9626.jpg",
+      "/static/collections/minnie-nyfw/180731_TD_JV_NYFW_MINNIE_DTR9735.jpg",
+      "/static/collections/minnie-nyfw/180731_TD_JV_NYFW_MINNIE_DTR9922.jpg",
+      "/static/collections/minnie-nyfw/180731_TD_JV_NYFW_MINNIE_DTR10011.jpg",
+      "/static/collections/minnie-nyfw/180731_TD_JV_NYFW_MINNIE_DTR10070.jpg",
+      "/static/collections/minnie-nyfw/180731_TD_JV_NYFW_MINNIE_DTR10087.jpg",
+      "/static/collections/minnie-nyfw/180904_td_header_MinnieMouse_1100x459.jpg"
+    ]
+  },
+  {
+    "href": "hello-kitty-2",
+    "grid": "/static/grid/hello_kitty_2_grid.jpg",
+    "text": "Hello Kitty",
+    "details": "Sanrio CO. licensing collection with Torrid.",
+    "images": [
+      "/static/collections/hello-kitty-2/180710_header_Hello_Kitty_2.jpg",
+      "/static/collections/hello-kitty-2/11398837_0788.jpg",
+      "/static/collections/hello-kitty-2/11398846_0926.jpg",
+      "/static/collections/hello-kitty-2/11399112_0151.jpg",
+      "/static/collections/hello-kitty-2/11399220_0448.jpg",
+      "/static/collections/hello-kitty-2/11399507_0624.jpg",
+      "/static/collections/hello-kitty-2/11409915_0998.jpg",
+      "/static/collections/hello-kitty-2/11409915_1119.jpg"
+    ]
+  },
+  {
+    "href": "star-wars",
+    "grid": "/static/grid/star_wars_grid.jpg",
+    "text": "Star Wars",
+    "images": [
+      "/static/collections/star-wars/181204_Social_Star_Wars_Story_1_1080x1920.jpg",
+      "/static/collections/star-wars/11652240_0343.jpg",
+      "/static/collections/star-wars/11652240_0491.jpg",
+      "/static/collections/star-wars/11652240_0513.jpg",
+      "/static/collections/star-wars/11652240_0561.jpg",
+      "/static/collections/star-wars/11655408_0209.jpg"
+    ]
+  },
+  {
+    "href": "captain-marvel",
+    "grid": "/static/grid/captain_marvel_grid.jpg",
+    "text": "Captain Marvel",
+    "images": [
+      "/static/collections/captain-marvel/190214_LB_Captain_Marvel_1_1440x624.jpg",
+      "/static/collections/captain-marvel/190214_LB_Captain_Marvel_4_1440x624.jpg",
+      "/static/collections/captain-marvel/11645204_0861.jpg",
+      "/static/collections/captain-marvel/11701003_0152.jpg",
+      "/static/collections/captain-marvel/11701003_0335.jpg",
+      "/static/collections/captain-marvel/11701003_0347.jpg",
+      "/static/collections/captain-marvel/11701003_0486.jpg",
+      "/static/collections/captain-marvel/11701003_0620.jpg"
+    ]
+  },
+  {
+    "href": "retro",
+    "grid": "/static/grid/retro_grid.jpg",
+    "text": "Retro",
+    "images": [
+      "/static/collections/retro/180823_TD_JV_RETRO_DTR_0035.jpg",
+      "/static/collections/retro/180823_TD_JV_RETRO_DTR_0090.jpg",
+      "/static/collections/retro/180823_TD_JV_RETRO_DTR_0141.jpg",
+      "/static/collections/retro/180823_TD_JV_RETRO_DTR_0260.jpg",
+      "/static/collections/retro/180823_TD_JV_RETRO_DTR_0296.jpg"
+    ]
+  },
+  {
+    "href": "minnie-rock-the-dots",
+    "grid": "/static/grid/minnie_rock_the_dots_grid.jpg",
+    "text": "Minnie Rock the Dots",
+    "images": [
+      "/static/collections/minnie-rock-the-dots/181226_TD_AL_MINNIE_SHOE_FLATS_16850.jpg",
+      "/static/collections/minnie-rock-the-dots/190122_LB_Minnie_1_1440x530.jpg",
+      "/static/collections/minnie-rock-the-dots/11612914-173.jpg",
+      "/static/collections/minnie-rock-the-dots/11628223_45441.jpg",
+      "/static/collections/minnie-rock-the-dots/11628241_45615.jpg",
+      "/static/collections/minnie-rock-the-dots/11628250_46346.jpg",
+      "/static/collections/minnie-rock-the-dots/11628250_46416.jpg",
+      "/static/collections/minnie-rock-the-dots/11630168_46118.jpg",
+      "/static/collections/minnie-rock-the-dots/11630168_46240.jpg",
+      "/static/collections/minnie-rock-the-dots/11630195_45792.jpg",
+      "/static/collections/minnie-rock-the-dots/11630195_45843.jpg",
+      "/static/collections/minnie-rock-the-dots/11630195_45882.jpg"
+    ]
+  },
+  {
+    "href": "hello-kitty-1",
+    "grid": "/static/grid/hello_kitty_1_grid.jpg",
+    "text": "Hello Kitty",
+    "details": "Sanrio CO. licensing collection with Torrid.",
+    "images": [
+      "/static/collections/hello-kitty-1/181120_email_Hello_Kitty.jpg",
+      "/static/collections/hello-kitty-1/11579514_42082.jpg",
+      "/static/collections/hello-kitty-1/11575307_41874.jpg",
+      "/static/collections/hello-kitty-1/11576227_41935.jpg",
+      "/static/collections/hello-kitty-1/11579514_42028.jpg",
+      "/static/collections/hello-kitty-1/11579514_42064.jpg",
+      "/static/collections/hello-kitty-1/11579514_42106.jpg",
+      "/static/collections/hello-kitty-1/11585803_42283.jpg",
+      "/static/collections/hello-kitty-1/11585847_42163.jpg"
+    ]
+  },
+  {
+    "href": "nightmare-before-christmas",
+    "grid": "/static/grid/nightmare_before_christmas_grid.jpg",
+    "text": "Nightmare Before Christmas",
+    "images": [
+      "/static/collections/nightmare-before-christmas/1118094_0217.jpg",
+      "/static/collections/nightmare-before-christmas/1118279_0299.jpg",
+      "/static/collections/nightmare-before-christmas/1118279_0487.jpg",
+      "/static/collections/nightmare-before-christmas/11118050_0977.jpg",
+      "/static/collections/nightmare-before-christmas/11446480_1758.jpg",
+      "/static/collections/nightmare-before-christmas/11446948_1311.jpg"
+    ]
+  },
+  {
+    "href": "disney-villains",
+    "grid": "/static/grid/villains_grid.jpg",
+    "text": "Disney Villains",
+    "images": [
+      "/static/collections/disney-villians/180822_VILLIANS_1.jpg",
+      "/static/collections/disney-villians/180822_VILLIANS_2.jpg"
+    ]
+  }
+]

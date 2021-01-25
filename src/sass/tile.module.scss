@@ -1,0 +1,50 @@
+.tile {
+  position:relative;
+  margin-bottom:15px;
+  cursor:pointer;
+
+  > img {
+    display:block;
+    transition: filter 400ms ease-in-out;
+    filter:grayscale(0);
+    width:100%;
+  }
+
+  &:hover, &:focus {
+    img {
+      filter: grayscale(1);
+    }
+
+    &:before {
+      opacity:1;
+    }
+  }
+
+  &:before {
+    content:'';
+    display:block;
+    opacity:0;
+    transition: opacity 400ms ease-in-out;
+    position:absolute;
+    background:top right no-repeat;
+    background-size:cover;
+    background-image:url('/icon-expand.svg');
+    padding-bottom:15%;
+    width:15%;
+    z-index:100;
+    top:0;
+    right:0;
+  }
+
+  &:after {
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#000;
+    opacity:0;
+    transition:opacity 480ms ease-in-out;
+    left:0;
+    top:0;
+  }
+}

@@ -1,0 +1,19 @@
+@import 'variables';
+
+.grid {
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-column-gap:15px;
+
+  @media screen and (max-width: #{$mobile_width}px) {
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@for $i from 1 through 3 {
+  .grid-column-#{$i} {
+    grid-column:#{$i};
+    display:flex;
+    flex-direction:column;
+  }
+}
