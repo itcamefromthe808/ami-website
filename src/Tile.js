@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Modal from './Modal'
+import { combineClasses } from './utilities'
 import css from './sass/tile.module.scss'
 
 function Tile(props) {
@@ -18,13 +19,16 @@ function Tile(props) {
     <div
       className={css.tile}
       onClick={ toggleModal }
+      tabIndex={ 0 }
     >
       <img
         className={css.image}
         src={`${folder}${image.thumb}`}
       />
       { openModal && (
-        <Modal onClick={ toggleModal }>
+        <Modal
+          onClick={ toggleModal }
+        >
           <img src={`${folder}${image.full}`} />
         </Modal>
       )}

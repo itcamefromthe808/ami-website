@@ -9,6 +9,7 @@ const Nav = props => (
           key={idx}
           className={idx === props.selected? css.selected : ''}
           onClick={e => props.selectCollection(idx)}
+          tabIndex={ 0 }
         >
           { c.nav }
         </li>

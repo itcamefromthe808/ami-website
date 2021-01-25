@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import Header from '../src/Header'
 import Nav from '../src/Nav'
@@ -19,10 +19,11 @@ function Index( props ) {
   const { collections } = props
   const [ selected, setSelected ] = useState(0)
 
-  const selectCollection = useCallback( index => {
+  const selectCollection = index => {
     setSelected(collections[index]? index : 0)
-  }, [])
+  }
 
+  const collection = useMemo(() => collections[selected], [collections, selected])
   return (
     <>
       <div className={"wrapper"}>
@@ -38,7 +39,7 @@ function Index( props ) {
         </header>
 
         <div className={"column-right"}>
-          <Grid images={collections[selected].images} folder={collections[selected].folder}/>
+          <Grid collection={collection} />
         </div>
       </div>
       <Footer />

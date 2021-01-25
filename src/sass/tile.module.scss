@@ -10,12 +10,30 @@
     width:100%;
   }
 
-  &:hover > img {
-    filter: grayscale(1);
+  &:hover, &:focus {
+    img {
+      filter: grayscale(1);
+    }
+
+    &:before {
+      opacity:1;
+    }
   }
 
   &:before {
     content:'';
+    display:block;
+    opacity:0;
+    transition: opacity 400ms ease-in-out;
+    position:absolute;
+    background:top right no-repeat;
+    background-size:cover;
+    background-image:url('/icon-expand.svg');
+    padding-bottom:15%;
+    width:15%;
+    z-index:100;
+    top:0;
+    right:0;
   }
 
   &:after {
