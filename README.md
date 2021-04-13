@@ -12,23 +12,14 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Thumbnails are 270 pixels wide for editorials, 400 pixels wide for still lifes (why?), full size are whatever the image requires but we're trying to keep the size under 1MB each.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## To Do
+Remove lazy image load (component is not unmounting properly and is throwing an error).
 
-## Learn More
+Should add some image processing to further optimize the images.
 
-To learn more about Next.js, take a look at the following resources:
+Update dependencies (should fix that dependabot error) 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+During build process we need to create spacers for each of the images so the lazy loader can do its thing. That means taking image properties then calculating height for each of the spacers.On page load, these spacers then get replaced with the actual images (which should be seemless if the math is correct). Use an on scroll listener to programatically load in images when the user scrolls down the page.
