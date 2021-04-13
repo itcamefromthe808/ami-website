@@ -22,8 +22,8 @@ const Grid = props => {
 
   const columns = useMemo(() => {
     return useMobile? [
-      images.filter( image => image.mobilePosition % 2 !== 0 ).sort( (i1,i2) => i1.mobilePosition < i2.mobilePosition? -1 : 0 ),
-      images.filter( image => image.mobilePosition % 2 === 0 ).sort( (i1,i2) => i1.mobilePosition < i2.mobilePosition? -1 : 0 )
+      images.filter( image => image.mobilePosition % 2 !== 0 ).sort( (i1,i2) => i1.mobilePosition < i2.mobilePosition? -1 : 1 ),
+      images.filter( image => image.mobilePosition % 2 === 0 ).sort( (i1,i2) => i1.mobilePosition < i2.mobilePosition? -1 : 1 )
     ] : [
       images.filter( image => image.column === 1 ),
       images.filter( image => image.column === 2 ),
