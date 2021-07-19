@@ -1,6 +1,146 @@
 [
   {
+    "nav":"Current Work",
+    "slug": "current-work",
+    "folder":"/collections/current-work/",
+    "images": [
+      {
+        "thumb":"look_1_842_thumb.jpg",
+        "full":"look_1_842_full.jpg",
+        "column":1,
+        "mobilePosition":1
+      },
+      {
+        "thumb":"look_5_879_thumb.jpg",
+        "full":"look_5_879_full.jpg",
+        "column":1,
+        "mobilePosition":9
+      },
+      {
+        "thumb":"look_5_873_thumb.jpg",
+        "full":"look_5_873_full.jpg",
+        "column":1,
+        "mobilePosition":9
+      },
+      {
+        "thumb":"look_4_869_thumb.jpg",
+        "full":"look_4_869_full.jpg",
+        "column":1,
+        "mobilePosition":9
+      },
+      {
+        "thumb":"look_7_889_thumb.jpg",
+        "full":"look_7_889_full.jpg",
+        "column":1,
+        "mobilePosition":9
+      },
+      {
+        "thumb":"look_6_886_thumb.jpg",
+        "full":"look_6_886_full.jpg",
+        "column":1,
+        "mobilePosition":9
+      },
+      {
+        "thumb":"look_9_915_thumb.jpg",
+        "full":"look_9_915_full.jpg",
+        "column":1,
+        "mobilePosition":9
+      },
+      {
+        "thumb":"look_1_845_thumb.jpg",
+        "full":"look_1_845_full.jpg",
+        "column":2,
+        "mobilePosition":2
+      },
+      {
+        "thumb":"look_2_850_thumb.jpg",
+        "full":"look_2_850_full.jpg",
+        "column":2,
+        "mobilePosition":3
+      },
+      {
+        "thumb":"look_2_856_thumb.jpg",
+        "full":"look_2_856_full.jpg",
+        "column":2,
+        "mobilePosition":3
+      },
+      {
+        "thumb":"look_7_902_thumb.jpg",
+        "full":"look_7_902_full.jpg",
+        "column":2,
+        "mobilePosition":3
+      },
+      {
+        "thumb":"look_6_884-2_thumb.jpg",
+        "full":"look_6_884-2_full.jpg",
+        "column":2,
+        "mobilePosition":3
+      },
+      {
+        "thumb":"look_7_897_thumb.jpg",
+        "full":"look_7_897_full.jpg",
+        "column":2,
+        "mobilePosition":3
+      },
+      {
+        "thumb":"look_8_909_thumb.jpg",
+        "full":"look_8_909_full.jpg",
+        "column":2,
+        "mobilePosition":3
+      },
+      {
+        "thumb":"look_3_859_thumb.jpg",
+        "full":"look_3_859_full.jpg",
+        "column":3,
+        "mobilePosition":4
+      },
+      {
+        "thumb":"look_2_855_thumb.jpg",
+        "full":"look_2_855_full.jpg",
+        "column":3,
+        "mobilePosition":1
+      },
+      {
+        "thumb":"look_3_862_thumb.jpg",
+        "full":"look_3_862_full.jpg",
+        "column":3,
+        "mobilePosition":1
+      },
+      {
+        "thumb":"look_4_863_thumb.jpg",
+        "full":"look_4_863_full.jpg",
+        "column":3,
+        "mobilePosition":1
+      },
+      {
+        "thumb":"look_8_905_thumb.jpg",
+        "full":"look_8_905_full.jpg",
+        "column":3,
+        "mobilePosition":1
+      },
+      {
+        "thumb":"look_9_916_thumb.jpg",
+        "full":"look_9_916_full.jpg",
+        "column":3,
+        "mobilePosition":1
+      },
+      {
+        "thumb":"look_6_882_thumb.jpg",
+        "full":"look_6_882_full.jpg",
+        "column":3,
+        "mobilePosition":1
+      },
+      {
+        "thumb":"look_7_893_thumb.jpg",
+        "full":"look_7_893_full.jpg",
+        "column":3,
+        "mobilePosition":1
+      }
+    ]
+  },
+  {
     "nav":"Editorials",
+    "slug": "editorials",
     "folder": "/collections/editorials/",
     "images": [
       {
@@ -307,6 +447,7 @@
   },
   {
     "nav":"Still Life",
+    "slug": "still-life",
     "folder":"/collections/saint-jane/",
     "images": [
       {

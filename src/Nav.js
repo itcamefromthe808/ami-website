@@ -7,13 +7,14 @@ const Nav = props => (
      { props.collections.map( (c,idx) => (
         <li
           key={idx}
-          className={idx === props.selected? css.selected : ''}
-          onClick={e => props.selectCollection(idx)}
           tabIndex={ 0 }
         >
-          { c.nav }
+          <Link href={c.slug}>{ c.nav }</Link>
         </li>
       )) }
+      <li>
+        <Link href="/contact">Contact</Link>
+      </li>
     </ul>
   </nav>
 )
