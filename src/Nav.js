@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import css from './sass/nav.module.scss'
 import { combineClasses } from './utilities'
 
@@ -11,6 +11,18 @@ const Nav = props => {
   const mobileNavClick = e => {
     setMobileOpen(!mobileOpen)
   }
+
+  const resetMobileState = () => {
+    setMobileOpen(false)
+  }
+
+  useEffect(() => {
+    router.events.on('routeChangeComplete', resetMobileState)
+
+    return () => {
+      router.events.off('routeChangeComplete', resetMobileState)
+    }
+  })
 
   return (
     <nav className={mobileOpen? combineClasses(css, '', 'nav', 'is-open') : css.nav }>
