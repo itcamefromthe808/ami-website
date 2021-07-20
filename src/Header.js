@@ -19,8 +19,9 @@ const Header = props => (
     <link rel="mask-icon" href="/static/favicon-mask.svg" color="#49B882" />
     <link rel="icon" href="/static/favicon.ico" />
     <link href="https://fonts.googleapis.com/css?family=Antic+Didone" rel="stylesheet" />
+    <meta property="og:region" content="en_US" />
     <meta property="og:url" content={props.ogURL || defaultOGURL} />
-    <meta property="og:title" content={props.title || ''} />
+    <meta property="og:title" content={props.ogTitle || props.title || ''} />
     <meta
       property="og:description"
       content={props.description || defaultDescription}

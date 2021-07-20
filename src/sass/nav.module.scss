@@ -9,6 +9,112 @@
     margin-top:0;
   }
 
+  // begin mobile nav
+  // mobile hamburger
+  .mobile-icon {
+    display:none;
+    background:transparent;
+    border:none;
+    position:fixed;
+    z-index:20;
+    top:8vh;
+    right:8vw;
+    overflow:hidden;
+    flex-direction:column;
+    justify-content:space-evenly;
+    height:#{(44 / 16)}rem;
+    width:#{(44 / 16)}rem;
+    padding:#{((44 - 35 )/ 32)}rem;
+    cursor:pointer;
+
+    &:before, &:after {
+      transition: transform .2s;
+      width:#{(35 / 16)}rem;
+      height:#{(2 / 16)}rem;
+      content: '';
+      display:block;
+      background:#000000;
+    }
+
+    span {
+      position:absolute;
+      left:-10000px;
+      height:1px;
+      width:1px;
+    }
+    @media screen and (max-width: #{$mobile_width}px) {
+      display:flex;
+    }
+  }
+
+  @media screen and (max-width: #{$mobile_width}px) {
+    position:absolute;
+    overflow:hidden;
+    height:1px;
+    width:1px;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+
+    // grey background to add separation from content
+    &:after {
+      content:'';
+      position:absolute;
+      display:none;
+      background:rgba(0,0,0,0.4);
+      height:100%;
+      width:100%;
+      z-index:1;
+      top:0;
+      left:0;
+    }
+
+    &.is-open {
+      z-index:1000;
+      height:100%;
+      width:100%;
+      top:0;
+      right:0;
+
+      &:after {
+        display:block;
+      }
+
+      ul {
+        display:flex;
+        flex-direction:column;
+        justify-content:space-evenly;
+        height:90%;
+        width:90%;
+        background:#ffffff;
+        padding:5vh 5vw;
+        background-clip:padding-box;
+        position:absolute;
+        text-align:center;
+        z-index:10;
+        top:auto;
+        bottom:auto;
+        left:auto;
+        right:auto;
+      }
+
+      // sliding mobile nav icon change in here
+      .mobile-icon {
+        justify-content:center;
+
+        &:before {
+          transform:rotate(-45deg) translateY(50%);
+        }
+        &:after {
+          transform:rotate(45deg) translateY(-50%);
+        }
+      }
+    }
+  }
+  // end mobile nav
+
+
   ul {
     list-style-type: none;
     padding: 0;
@@ -30,9 +136,25 @@
     font-size: 1.3rem;
     font-weight: 800;
 
-    &.selected, &:hover, &:focus {
-      cursor:pointer;
-      text-decoration: underline;
+    @media screen and (max-width: #{$tablet_width}px) {
+      margin:0.7rem 0;
+    }
+
+    a {
+      text-decoration:none;
+      color:#000000;
+
+      &:hover, &:focus, &.selected {
+        text-decoration: underline;
+      }
+    }
+
+    &.contact {
+      margin-top:5em;
+
+      @media screen and (max-width: #{$tablet_width}px) {
+        margin-top:0;
+      }
     }
   }
 

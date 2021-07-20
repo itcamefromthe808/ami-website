@@ -1,7 +1,5 @@
 import { useState } from 'react'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
 import Modal from './Modal'
-import { combineClasses } from './utilities'
 import css from './sass/tile.module.scss'
 
 function Tile(props) {
@@ -22,7 +20,7 @@ function Tile(props) {
       onClick={ toggleModal }
       tabIndex={ 0 }
     >
-      <LazyLoadImage
+      <img
         className={css.image}
         src={`${folder}${image.thumb}`}
       />
@@ -30,7 +28,7 @@ function Tile(props) {
         <Modal
           onClick={ toggleModal }
         >
-          <LazyLoadImage src={`${folder}${image.full}`} />
+          <img src={`${folder}${image.full}`} />
         </Modal>
       )}
     </div>
