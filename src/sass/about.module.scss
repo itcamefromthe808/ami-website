@@ -1,6 +1,24 @@
 .about {
-  img {
-    width:30%;
+  display:grid;
+  grid-template-columns: 35% 65%;
+  grid-column-gap: 1.5rem;
+  margin-top:calc(2.5vh + 3rem);
+
+  .img {
+    display:block;
+    width:100%;
     height:auto;
+  }
+
+  .copy {
+    text-align: center;
+
+    address {
+      font-style:normal;
+    }
+
+    .callout {
+      margin-top:4em;
+    }
   }
 }
