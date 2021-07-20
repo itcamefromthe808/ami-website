@@ -1,4 +1,6 @@
+@use "sass:math";
 @import 'variables';
+
 
 .nav {
   position:relative;
@@ -22,15 +24,15 @@
     overflow:hidden;
     flex-direction:column;
     justify-content:space-evenly;
-    height:#{(44 / 16)}rem;
-    width:#{(44 / 16)}rem;
-    padding:#{((44 - 35 )/ 32)}rem;
+    height:#{math.div(44, 16)}rem;
+    width:#{math.div(44, 16)}rem;
+    padding:#{math.div((44 - 35 ), 32)}rem;
     cursor:pointer;
 
     &:before, &:after {
       transition: transform .2s;
-      width:#{(35 / 16)}rem;
-      height:#{(2 / 16)}rem;
+      width:#{math.div(35, 16)}rem;
+      height:#{math.div(2, 16)}rem;
       content: '';
       display:block;
       background:#000000;
