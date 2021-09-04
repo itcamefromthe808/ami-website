@@ -475,6 +475,18 @@
         "mobilePosition":12
       },
       {
+        "thumb":"shoes_2.jpg",
+        "full":"shoes_2_full.jpg",
+        "column":1,
+        "mobilePosition":13
+      },
+      {
+        "thumb":"still_7.jpg",
+        "full":"still_7_full.jpg",
+        "column":1,
+        "mobilePosition":16
+      },
+      {
         "thumb":"saint-jane-03.gif",
         "full":"saint-jane-03.gif",
         "column":2,
@@ -491,6 +503,18 @@
         "full":"210313_SAINT_JANE_0957.jpg",
         "column":2,
         "mobilePosition":7
+      },
+      {
+        "thumb":"still_9.jpg",
+        "full":"still_9_full.jpg",
+        "column":2,
+        "mobilePosition":14
+      },
+      {
+        "thumb":"shoes_1.jpg",
+        "full":"shoes_1_full.jpg",
+        "column":2,
+        "mobilePosition":18
       },
       {
         "thumb":"210313_SAINT_JANE_0786_thumb.jpg",
@@ -515,6 +539,18 @@
         "full":"210313_SAINT_JANE_0934.jpg",
         "column":3,
         "mobilePosition":8
+      },
+      {
+        "thumb":"still_8.jpg",
+        "full":"still_8_full.jpg",
+        "column":3,
+        "mobilePosition":11
+      },
+      {
+        "thumb":"bag_1.jpg",
+        "full":"bag_1_full.jpg",
+        "column":3,
+        "mobilePosition":15
       }
     ]
   }
