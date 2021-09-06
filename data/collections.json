@@ -475,14 +475,14 @@
         "mobilePosition":12
       },
       {
-        "thumb":"shoes_2.jpg",
-        "full":"shoes_2_full.jpg",
+        "thumb":"shoes_2.gif",
+        "full":"shoes_2_full.gif",
         "column":1,
         "mobilePosition":13
       },
       {
-        "thumb":"still_7.jpg",
-        "full":"still_7_full.jpg",
+        "thumb":"still_7.gif",
+        "full":"still_7_full.gif",
         "column":1,
         "mobilePosition":16
       },
@@ -511,8 +511,8 @@
         "mobilePosition":14
       },
       {
-        "thumb":"shoes_1.jpg",
-        "full":"shoes_1_full.jpg",
+        "thumb":"shoes_1.gif",
+        "full":"shoes_1_full.gif",
         "column":2,
         "mobilePosition":18
       },
