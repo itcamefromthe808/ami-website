@@ -490,13 +490,13 @@
         "thumb":"210907_TR_Socialflats_0223.jpg",
         "full":"210907_TR_Socialflats_0223_full.jpg",
         "column":1,
-        "mobilePosition":18
+        "mobilePosition":19
       },
       {
         "thumb":"210907_TR_Socialflats_0162.jpg",
         "full":"210907_TR_Socialflats_0162_full.jpg",
         "column":1,
-        "mobilePosition":20
+        "mobilePosition":23
       },
       {
         "thumb":"210907_TR_Socialflats_0172.jpg",
@@ -538,19 +538,19 @@
         "thumb":"210907_TR_Socialflats_0131.jpg",
         "full":"210907_TR_Socialflats_0131_full.jpg",
         "column":2,
-        "mobilePosition":19
+        "mobilePosition":20
       },
       {
         "thumb":"210907_TR_Socialflats_0181.jpg",
         "full":"210907_TR_Socialflats_0181_full.jpg",
         "column":2,
-        "mobilePosition":20
+        "mobilePosition":21
       },
       {
         "thumb":"210907_TR_Socialflats_0345.jpg",
         "full":"210907_TR_Socialflats_0345_full.jpg",
         "column":2,
-        "mobilePosition":21
+        "mobilePosition":26
       },
       {
         "thumb":"210313_SAINT_JANE_0786_thumb.jpg",
@@ -592,19 +592,19 @@
         "thumb":"210907_TR_Socialflats_0115.jpg",
         "full":"210907_TR_Socialflats_0115_full.jpg",
         "column":3,
-        "mobilePosition":23
+        "mobilePosition":21
       },
       {
         "thumb":"210907_TR_Socialflats_0045.jpg",
         "full":"210907_TR_Socialflats_0045_full.jpg",
         "column":3,
-        "mobilePosition":25
+        "mobilePosition":22
       },
       {
         "thumb":"210907_TR_Socialflats_0051.jpg",
         "full":"210907_TR_Socialflats_0051_full.jpg",
         "column":3,
-        "mobilePosition":26
+        "mobilePosition":25
       }
     ]
   }
