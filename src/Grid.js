@@ -5,7 +5,8 @@ import css from './sass/grid.module.scss'
 
 const Grid = props => {
   const {
-    images,
+    desktop,
+    mobile,
     folder,
   } = props.collection
   const { debounce } = useDebounce()
@@ -20,16 +21,20 @@ const Grid = props => {
     }, 20)
   }
 
+  // const columns = useMemo(() => {
+  //   return useMobile? [
+  //     images.filter( image => image.mobilePosition % 2 !== 0 ).sort( (i1,i2) => i1.mobilePosition < i2.mobilePosition? -1 : 1 ),
+  //     images.filter( image => image.mobilePosition % 2 === 0 ).sort( (i1,i2) => i1.mobilePosition < i2.mobilePosition? -1 : 1 )
+  //   ] : [
+  //     images.filter( image => image.column === 1 ),
+  //     images.filter( image => image.column === 2 ),
+  //     images.filter( image => image.column === 3 )
+  //   ]
+  // }, [images, useMobile])
+
   const columns = useMemo(() => {
-    return useMobile? [
-      images.filter( image => image.mobilePosition % 2 !== 0 ).sort( (i1,i2) => i1.mobilePosition < i2.mobilePosition? -1 : 1 ),
-      images.filter( image => image.mobilePosition % 2 === 0 ).sort( (i1,i2) => i1.mobilePosition < i2.mobilePosition? -1 : 1 )
-    ] : [
-      images.filter( image => image.column === 1 ),
-      images.filter( image => image.column === 2 ),
-      images.filter( image => image.column === 3 )
-    ]
-  }, [images, useMobile])
+    return useMobile? mobile : desktop
+  }, [mobile, desktop, useMobile])
 
   // listen for window resize
   useEffect(() => {

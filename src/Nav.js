@@ -38,8 +38,8 @@ const Nav = props => {
             key={idx}
             tabIndex={ 0 }
           >
-            <Link href={`/${c.slug}`}>
-              <a className={router.asPath === `/${c.slug}`? css.selected : ''}>{ c.nav }</a>
+            <Link href={`/${c.collection}`}>
+              <a className={router.asPath === `/${c.collection}`? css.selected : ''}>{ c.nav }</a>
             </Link>
           </li>
         )) }

@@ -1,12 +1,27 @@
-import { useState, useMemo } from 'react'
 import Header from '../src/Header'
 import Nav from '../src/Nav'
 import Footer from '../src/Footer'
 import Grid from '../src/Grid'
-import collections from '../data/collections.json'
+import editorials from '../data/collections/editorials'
+import currentWork from '../data/collections/current-work'
+import stillLife from '../data/collections/still-life'
+
+const collections = [
+  currentWork,
+  editorials,
+  stillLife
+]
+
 
 export async function getStaticPaths() {
-  const paths = collections.map( col => ({ params: { collection: col.slug } }) )
+  const paths = collections.map( col => {
+    const { collection } = col
+    return {
+      params: {
+        collection,
+      }
+    }
+  })
 
   return {
     paths,
@@ -15,24 +30,23 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps ({ params }) {
+  const collection = collections.find( col => col.collection === params.collection )
+  
   return {
     props: {
-      collections,
-      slug: params.collection
+      collection
     }
   }
 }
 
 function Collection( props ) {
-  const { collections, slug } = props
-  const collection = collections.find( col => col.slug === slug )
+  console.log('here', props)
 
   return (
     <>
       <main className={"wrapper"}>
         <header className={"column-left"}>
-          <Header 
-            title={ collection.nav }
+          <Header
             ogURL="amijenner.com"
             ogTitle="Ami Jenner"
             ogImage="/social-share.jpg"
@@ -46,7 +60,7 @@ function Collection( props ) {
         </header>
 
         <div className={"column-right"}>
-          <Grid collection={collection} />
+          <Grid {...props} />
         </div>
       </main>
       <Footer />

@@ -144,6 +144,36 @@
     "folder": "/collections/editorials/",
     "images": [
       {
+        "thumb": "CREPE_TAPER_927.jpg",
+        "full": "CREPE_TAPER_927_full.jpg",
+        "column": 1,
+        "mobilePosition": 1
+      },
+      {
+        "thumb": "CREPE_TAPER_1000.jpg",
+        "full": "CREPE_TAPER_1000_full.jpg",
+        "column": 1,
+        "mobilePosition": 1
+      },
+      {
+        "thumb": "CROP_TAPER_1069.jpg",
+        "full": "CROP_TAPER_1069_full.jpg",
+        "column": 1,
+        "mobilePosition": 1
+      },
+      {
+        "thumb": "CROP_TAPER_1128.jpg",
+        "full": "CROP_TAPER_1128_full.jpg",
+        "column": 1,
+        "mobilePosition": 1
+      },
+      {
+        "thumb": "SKINNY_BOMBSHELL_818.jpg",
+        "full": "SKINNY_BOMBSHELL_818_full.jpg",
+        "column": 1,
+        "mobilePosition": 1
+      },
+      {
         "thumb":"ami_1.jpg",
         "full":"ami_1full.jpg",
         "column":1,
@@ -246,6 +276,36 @@
         "mobilePosition":47
       },
       {
+        "thumb": "CREPE_TAPER_953.jpg",
+        "full": "CREPE_TAPER_953_full.jpg",
+        "column": 2,
+        "mobilePosition": 1
+      },
+      {
+        "thumb": "CREPE_TAPER_986.jpg",
+        "full": "CREPE_TAPER_986_full.jpg",
+        "column": 2,
+        "mobilePosition": 1
+      },
+      {
+        "thumb": "CROP_TAPER_1037.jpg",
+        "full": "CROP_TAPER_1037_full.jpg",
+        "column": 2,
+        "mobilePosition": 1
+      },
+      {
+        "thumb": "DELUXE_STRETCH_STRAIGHT_495.jpg",
+        "full": "DELUXE_STRETCH_STRAIGHT_495_full.jpg",
+        "column": 2,
+        "mobilePosition": 1
+      },
+      {
+        "thumb": "PONTE_SKINNY_230.jpg",
+        "full": "PONTE_SKINNY_230_full.jpg",
+        "column": 2,
+        "mobilePosition": 1
+      },
+      {
         "thumb":"ami_2.jpg",
         "full":"ami_2full.jpg",
         "column":2,
@@ -346,6 +406,36 @@
         "full":"holiday_3_full.jpg",
         "column":2,
         "mobilePosition":52
+      },
+      {
+        "thumb": "CREPE_TAPER_986.jpg",
+        "full": "CREPE_TAPER_986_full.jpg",
+        "column": 3,
+        "mobilePosition": 1
+      },
+      {
+        "thumb": "CROP_TAPER_1064.jpg",
+        "full": "CROP_TAPER_1064_full.jpg",
+        "column": 3,
+        "mobilePosition": 1
+      },
+      {
+        "thumb": "CROP_TAPER_1064.jpg",
+        "full": "CROP_TAPER_1064_full.jpg",
+        "column": 3,
+        "mobilePosition": 1
+      },
+      {
+        "thumb": "SKINNY_BOMBSHELL_873.jpg",
+        "full": "SKINNY_BOMBSHELL_873_full.jpg",
+        "column": 3,
+        "mobilePosition": 1
+      },
+      {
+        "thumb": "PONTE_PIXIE_649.jpg",
+        "full": "PONTE_PIXIE_649_full.jpg",
+        "column": 3,
+        "mobilePosition": 1
       },
       {
         "thumb":"ami_3.jpg",
