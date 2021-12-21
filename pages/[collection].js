@@ -40,7 +40,6 @@ export async function getStaticProps ({ params }) {
 }
 
 function Collection( props ) {
-  console.log('here', props)
 
   return (
     <>
