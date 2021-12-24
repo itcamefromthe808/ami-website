@@ -1,7 +1,7 @@
 import Grid from '../src/Grid'
-import editorials from '../data/collections/editorials'
-import currentWork from '../data/collections/current-work'
-import stillLife from '../data/collections/still-life'
+import editorials from '../public/collections/editorials/manifest.json'
+import currentWork from '../public/collections/current-work/manifest.json'
+import stillLife from '../public/collections/still-life/manifest.json'
 
 const collections = [
   currentWork,

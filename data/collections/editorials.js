@@ -1,8 +1,9 @@
-export const nav = "Editorials"
-export const collection = "editorials"
-export const folder = "/collections/editorials/"
+const manifest = '/public/collections/editorials/manifest.json'
 
-export const desktop = [
+const nav = "Editorials"
+const collection = "editorials"
+const folder = "/collections/editorials/"
+const desktop = [
   [
     {
       "thumb": "CREPE_TAPER_927.jpg",
@@ -42,7 +43,7 @@ export const desktop = [
     },
     {
       "thumb":"ami_missing_2.jpg",
-      "full":"ami__missing_2_full.jpg",
+      "full":"ami_missing_2_full.jpg",
     },
     {
       "thumb":"ami_1d.jpg",
@@ -204,7 +205,7 @@ export const desktop = [
     },
     {
       "thumb":"ami_3.jpg",
-      "full":"ami_3full.jpg",
+      "full":"ami_3_full.jpg",
     },
     {
       "thumb":"ami_3a.jpg",
@@ -269,7 +270,7 @@ export const desktop = [
   ]
 ]
 
-export const mobile = [
+const mobile = [
   [
     {
       "thumb": "CREPE_TAPER_927.jpg",
@@ -309,7 +310,7 @@ export const mobile = [
     },
     {
       "thumb":"ami_3.jpg",
-      "full":"ami_3full.jpg",
+      "full":"ami_3_full.jpg",
     },
     {
       "thumb":"ami_1b.jpg",
@@ -321,7 +322,7 @@ export const mobile = [
     },
     {
       "thumb":"ami_missing_2.jpg",
-      "full":"ami__missing_2_full.jpg",
+      "full":"ami_missing_2_full.jpg",
     },
     {
       "thumb":"ami_missing_1.jpg",
@@ -542,5 +543,6 @@ export default {
   collection,
   folder,
   desktop,
-  mobile
+  mobile,
+  manifest
 }

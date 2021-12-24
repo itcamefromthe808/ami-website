@@ -1,7 +1,9 @@
-export const nav = "Still Life"
-export const collection = "still-life"
-export const folder = "/collections/saint-jane/"
-export const desktop = [
+const manifest = '/public/collections/saint-jane/manifest.json'
+
+const nav = "Still Life"
+const collection = "still-life"
+const folder = "/collections/saint-jane/"
+const desktop = [
   [
     {
       "thumb":"saint-jane-01.gif",
@@ -112,7 +114,7 @@ export const desktop = [
   ]
 ]
 
-export const mobile = [
+const mobile = [
   [
     {
       "thumb":"saint-jane-01.gif",
@@ -228,5 +230,6 @@ export default {
   collection,
   folder,
   desktop,
-  mobile
+  mobile,
+  manifest
 }

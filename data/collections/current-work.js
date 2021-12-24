@@ -1,7 +1,9 @@
-export const nav = "Current Work"
-export const collection = "current-work"
-export const folder = "/collections/current-work/"
-export const desktop = [
+const manifest = '/public/collections/current-work/manifest.json'
+
+const nav = "Current Work"
+const collection = "current-work"
+const folder = "/collections/current-work/"
+const desktop = [
   [
     {
       "thumb":"look_1_842_thumb.jpg",
@@ -96,7 +98,7 @@ export const desktop = [
   ]
 ]
 
-export const mobile = [
+const mobile = [
   [
     {
       "thumb":"look_1_842_thumb.jpg",
@@ -195,5 +197,6 @@ export default {
   collection,
   folder,
   desktop,
-  mobile
+  mobile,
+  manifest
 }

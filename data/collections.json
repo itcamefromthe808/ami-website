@@ -199,7 +199,7 @@
       },
       {
         "thumb":"ami_missing_2.jpg",
-        "full":"ami__missing_2_full.jpg",
+        "full":"ami_missing_2_full.jpg",
         "column":1,
         "mobilePosition":11
       },
@@ -439,7 +439,7 @@
       },
       {
         "thumb":"ami_3.jpg",
-        "full":"ami_3full.jpg",
+        "full":"ami_3_full.jpg",
         "column":3,
         "mobilePosition":5
       },

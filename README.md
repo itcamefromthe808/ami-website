@@ -16,10 +16,4 @@ Thumbnails are 270 pixels wide for editorials, 400 pixels wide for still lifes (
 
 
 ## To Do
-Remove lazy image load (component is not unmounting properly and is throwing an error).
-
-Should add some image processing to further optimize the images.
-
-Update dependencies (should fix that dependabot error) 
-
-During build process we need to create spacers for each of the images so the lazy loader can do its thing. That means taking image properties then calculating height for each of the spacers.On page load, these spacers then get replaced with the actual images (which should be seemless if the math is correct). Use an on scroll listener to programatically load in images when the user scrolls down the page.
+before deploying with new images, run `npm run images` locally to create responsive versions and update meta data
