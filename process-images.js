@@ -10,7 +10,7 @@ async function createManifest(files, manifest) {
 
 async function createImage({ width, source, destination }) {
   try {
-    const img = await sharp(source).jpeg({ quality:90 })
+    const img = await sharp(source)
     const { data, info } = await img.resize({ width }).toBuffer({ resolveWithObject: true })
 
     const { height } = info
@@ -18,7 +18,7 @@ async function createImage({ width, source, destination }) {
     const matches = raw.match(/\.jpg/)
     const filename = `${raw.replace(matches[0],'')}_${width}x${height}${matches[0]}`
 
-    const { size } = await sharp( data ).toFile(`${destination}/${filename}`)
+    const { size } = await sharp( data ).jpeg({ quality:100, chromaSubsampling:'4:4:4' }).toFile(`${destination}/${filename}`)
             
     console.log(`resizing: ${source} => ${destination}/${filename} (${ size } bytes)`)
 
@@ -40,6 +40,7 @@ async function createImage({ width, source, destination }) {
 // thumbnail sizes only
 // could make this an environment variable so it can be shared
 const outputSizes = [
+  540,
   270,
   135,
   90
