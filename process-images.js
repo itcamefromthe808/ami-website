@@ -3,14 +3,14 @@ const sharp = require('sharp')
 
 
 async function createManifest(files, manifest) {
-  await writeFile(manifest, JSON.stringify(files), (err, bytesWritten, buffer) => {
-    console.log(`manifest created: ${ manifest } (${ bytesWritten } bytes.)`)
-  })
+  await writeFile(manifest, JSON.stringify(files), (err, bytesWritten, buffer) => {})
+
+  console.log(`manifest created: ${ manifest }`)
 }
 
 async function createImage({ width, source, destination }) {
   try {
-    const img = await sharp(source)
+    const img = await sharp(source).jpeg({ quality:90 })
     const { data, info } = await img.resize({ width }).toBuffer({ resolveWithObject: true })
 
     const { height } = info
@@ -22,10 +22,12 @@ async function createImage({ width, source, destination }) {
             
     console.log(`resizing: ${source} => ${destination}/${filename} (${ size } bytes)`)
 
+    const outputPath = destination.split('/').slice(2)
     return {
       width,
       height,
-      output: `${destination}/${filename}` 
+      output: `${outputPath.join('/')}/${filename}`, 
+      full: `${outputPath.join('/')}/${raw}`
     }
 
   } catch( err ) {
@@ -36,6 +38,7 @@ async function createImage({ width, source, destination }) {
 }
 
 // thumbnail sizes only
+// could make this an environment variable so it can be shared
 const outputSizes = [
   270,
   135,
@@ -46,12 +49,17 @@ function resizeImages( source, destination ) {
 }
 
 async function addImagesToEntry( entry, collection ) {
-  const { thumb } = entry
+  const { full } = entry
 
-  const images = /\.jpg$/.test(thumb)? await Promise.all(
-    resizeImages(`./src/collections/${collection}/${thumb}`, `./public/collections/${collection}`)
-  ) : null
+  const images = /\.jpg$/.test(full)? await Promise.all(
+    resizeImages(`./src/collections/${collection}/${full}`, `./public/collections/${collection}`)
+  ) : [{
+    output: `/collections/${collection}/${full}`,
+    full: `/collections/${collection}/${full}`
+  }]
 
+  delete entry.full
+  delete entry.thumb
   entry.images = images
 }
 
@@ -74,19 +82,18 @@ collections.map( async collection => {
     let desktop = JSON.parse( await readFile(`./data/collections/${collection}/desktop.json`) )
     let mobile = JSON.parse( await readFile(`./data/collections/${collection}/mobile.json`) )
     
-    // loop through the deep arrays and create thumbnails for each entry
-    await Promise.all( 
+    // loop through the deep arrays and create additional images for each entry
+    await Promise.all([
       ...desktop.map( async column => await Promise.all( column.map( async entry => {
         const { full } = entry
         await addImagesToEntry(entry, collection)
         // move the full size image over too
         copyFile( `./src/collections/${collection}/${full}`, `./public/collections/${collection}/${full}` )
       }))),
-      // do mobile layout too
       ...mobile.map( async column => await Promise.all( column.map( async entry => {
         await addImagesToEntry(entry, collection)
       })))
-    )
+    ])
 
     // udpate the manifest json files
     await createManifest({ 

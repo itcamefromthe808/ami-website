@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef, useMemo } from 'react'
 import { useDebounce } from './utilities'
-import Tile from './Tile'
+// import Tile from './Tile'
+import ResponsiveTile from './ResponsiveTile'
 import css from './sass/grid.module.scss'
 
 const Grid = props => {
   const {
     desktop,
     mobile,
-    folder,
   } = props.collection
   const { debounce } = useDebounce()
   const body = useRef(typeof document !== 'undefined'? document.getElementsByTagName('body')[0] : null)
@@ -48,7 +48,7 @@ const Grid = props => {
         { columns.length? columns.map( (col, idx) => {
           return (
             <div className={css[`grid-column-${idx+1}`]} key={idx}>
-              { columns[idx].map( (image,key) => <Tile key={key} image={image} folder={folder} /> ) }
+              { columns[idx].map( (entry,key) => <ResponsiveTile key={key} {...entry} /> ) }
             </div>
           )
         }) : null}
