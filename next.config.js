@@ -5,6 +5,7 @@ module.exports = {
     includePaths: [path.join(__dirname, 'src', 'sass')],
   },
   images: {
+    loader: 'custom',
     imageSizes: [90, 135, 270],
   },
   async redirects() {
