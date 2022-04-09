@@ -12,7 +12,12 @@ module.exports = {
     return [
       {
         source: '/',
-        destination: '/current-work',
+        destination: '/editorials',
+        permanent: true,
+      },
+      {
+        source: '/current-work',
+        destination: '/editorials',
         permanent: true,
       },
     ]

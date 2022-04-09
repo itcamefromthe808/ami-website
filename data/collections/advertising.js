@@ -1,0 +1,127 @@
+const nav = "Advertising"
+const collection = "advertising"
+
+const desktop = [
+  [
+    "shoreline-cover_full.jpg",
+    "1-3.jpg",
+    "5-2.jpg",
+    "look_3_0215.jpg",
+    "vulkan_magazine.jpg",
+    "1E0A9856.jpg",
+    "look_1_842_full.jpg",
+    "look_5_879_full.jpg",
+    "look_5_873_full.jpg",
+    "look_4_869_full.jpg",
+    "look_7_889_full.jpg",
+    "look_6_886_full.jpg",
+    "look_9_915_full.jpg"
+  ], [
+    "6-1.jpg",
+    "5-3.jpg",
+    "shoreline-02.jpg",
+    "look_3_magazine.jpg",
+    "1E0A9961.jpg",
+    "1E0A9895.jpg",
+    "look_1_845_full.jpg",
+    "look_2_850_full.jpg",
+    "look_2_856_full.jpg",
+    "look_7_902_full.jpg",
+    "look_6_884-2_full.jpg",
+    "look_7_897_full.jpg",
+    "look_8_909_full.jpg"
+  ], [
+    "3-2.jpg",
+    "3-1.jpg",
+    "7-4.jpg",
+    "look_3_0266.jpg",
+    "1E0A9861.jpg",
+    "look_3_859_full.jpg",
+    "look_2_855_full.jpg",
+    "look_3_862_full.jpg",
+    "look_4_863_full.jpg",
+    "look_8_905_full.jpg",
+    "look_9_916_full.jpg",
+    "look_6_882_full.jpg",
+    "look_7_893_full.jpg"
+  ]
+]
+
+const mobile = [
+  [
+    "CREPE_TAPER_927_full.jpg",
+    "CROP_TAPER_1064_full.jpg",
+    "CREPE_TAPER_986_full.jpg",
+    "STRETCH_RELAX_TROUSER_743_full.jpg",
+    "CROP_TAPER_1128_full.jpg",
+    "SKINNY_BOMBSHELL_818_full.jpg",
+    "PONTE_SKINNY_230_full.jpg",
+    "ami_1full.jpg",
+    "ami_1a_full.jpg",
+    "ami_3_full.jpg",
+    "ami_1b_full.jpg",
+    "ami_1c_full.jpg",
+    "ami_missing_2_full.jpg",
+    "ami_missing_1_full.jpg",
+    "ami_1d_full.jpg",
+    "ami_3e_full.jpg",
+    "ami_1e_full.jpg",
+    "ami_1f_full.jpg",
+    "ami_1g_full.jpg",
+    "ami_2g_full.jpg",
+    "ami_1h_full.jpg",
+    "ami_2i_full.jpg",
+    "ami_1i_full.jpg",
+    "ami_1j_full.jpg",
+    "ami_2j_full.jpg",
+    "ami_1k_full.jpg",
+    "ami_1l_full.jpg",
+    "wonder_woman_1_full.jpg",
+    "wonder_woman_2_full.jpg",
+    "aristocats_2_full.jpg",
+    "holiday_2_full.jpg"
+  ],
+  [
+    "CREPE_TAPER_953_full.jpg",
+    "STRETCH_RELAX_TROUSER_662_full.jpg",
+    "CROP_TAPER_1037_full.jpg",
+    "CROP_TAPER_1069_full.jpg",
+    "CREPE_TAPER_1000_full.jpg",
+    "SKINNY_BOMBSHELL_873_full.jpg",
+    "PONTE_PIXIE_649_full.jpg",
+    "DELUXE_STRETCH_STRAIGHT_495_full.jpg",
+    "ami_2full.jpg",
+    "ami_2a_full.jpg",
+    "ami_2b_full.jpg",
+    "ami_3a_full.jpg",
+    "ami_3b_full.jpg",
+    "ami_2c_full.jpg",
+    "ami_3c_full.jpg",
+    "ami_2d_full.jpg",
+    "ami_3d_full.jpg",
+    "ami_2e_full.jpg",
+    "ami_2f_full.jpg",
+    "ami_3f_full.jpg",
+    "ami_3g_full.jpg",
+    "ami_2h_full.jpg",
+    "ami_3h_full.jpg",
+    "ami_3i_full.jpg",
+    "ami_3j_full.jpg",
+    "ami_2k_full.jpg",
+    "ami_3k_full.jpg",
+    "ami_3l_full.jpg",
+    "ami_2l_full.jpg",
+    "wonder_woman_3_full.jpg",
+    "aristocats_1_full.jpg",
+    "holiday_4_full.jpg",
+    "holiday_1_full.jpg",
+    "holiday_3_full.jpg"
+  ]
+]
+
+export default {
+  nav,
+  collection,
+  desktop,
+  mobile
+}
