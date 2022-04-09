@@ -8,11 +8,25 @@ async function createManifest(files, manifest) {
   console.log(`manifest created: ${ manifest }`)
 }
 
+async function createBlurFile({ source, destination }) {
+  console.log(source)
+  const raw = source.split('/').pop()
+  const matches = raw.match(/\.jpg/)
+  const blurfile = `${raw.replace(matches[0],'')}_blur${matches[0]}`
+  const img = await sharp(source)
+  const { size } = await sharp( data ).blur().jpeg({ quality: 60 }).toFile(`${destination}/${blurfile}`)
+
+  console.log(`creating blur file: ${source} => ${destination}/${filename} (${ size } bytes)`)
+
+  const outputPath = destination.split('/').slice(2)
+
+  return `${outputPath.join('/')}/${blurfile}`
+}
+
 async function createImage({ width, source, destination }) {
   try {
     const img = await sharp(source)
     const { data, info } = await img.resize({ width }).toBuffer({ resolveWithObject: true })
-
     const { height } = info
     const raw = source.split('/').pop()
     const matches = raw.match(/\.jpg/)
@@ -20,14 +34,13 @@ async function createImage({ width, source, destination }) {
 
     const { size } = await sharp( data ).jpeg({ quality:100, chromaSubsampling:'4:4:4' }).toFile(`${destination}/${filename}`)
             
-    console.log(`resizing: ${source} => ${destination}/${filename} (${ size } bytes)`)
+    // console.log(`resizing: ${source} => ${destination}/${filename} (${ size } bytes)`)
 
     const outputPath = destination.split('/').slice(2)
     return {
       width,
       height,
-      output: `${outputPath.join('/')}/${filename}`, 
-      full: `${outputPath.join('/')}/${raw}`
+      output: `${outputPath.join('/')}/${filename}`
     }
 
   } catch( err ) {
@@ -55,12 +68,18 @@ async function addImagesToEntry( entry, collection ) {
   const images = /\.jpg$/.test(full)? await Promise.all(
     resizeImages(`./src/collections/${collection}/${full}`, `./public/collections/${collection}`)
   ) : [{
-    output: `/collections/${collection}/${full}`,
-    full: `/collections/${collection}/${full}`
+    output: `/collections/${collection}/${full}`
   }]
 
-  delete entry.full
+  const blurFile = /\.jpg$/.test(full)? await createBlurFile({ 
+    source: `./src/collections/${collection}/${full}`, 
+    destination: `./public/collections/${collection}` 
+  }) : `/collections/${collection}/${full}`
+
+  
   delete entry.thumb
+  entry.full = `/collections/${collection}/${full}`
+  entry.blur = blurFile
   entry.images = images
 }
 

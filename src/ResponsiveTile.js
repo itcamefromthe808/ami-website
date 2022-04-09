@@ -5,7 +5,9 @@ import css from './sass/tile.module.scss'
 
 function ResponsiveTile(props) {
   const {
-    images
+    images,
+    full,
+    blur
   } = props
   const [openModal, setModalState] = useState(false)
 
@@ -52,7 +54,7 @@ function ResponsiveTile(props) {
         <Modal
           onClick={ toggleModal }
         >
-          <img src={images[0].full} />
+          <img src={full} />
         </Modal>
       )}
       
