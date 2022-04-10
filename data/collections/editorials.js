@@ -35,6 +35,7 @@ const desktop = [
     "3-1.jpg",
     "7-4.jpg",
     "look_3_0266.jpg",
+    "1E0A9728.jpg",
     "1E0A9861.jpg",
     "look_3_859_full.jpg",
     "look_2_855_full.jpg",
@@ -49,6 +50,15 @@ const desktop = [
 
 const mobile = [
   [
+    "shoreline-cover_full.jpg",
+    "6-1.jpg",
+    "1-3.jpg",
+    "5-2.jpg",
+    "look_3_magazine.jpg",
+    "look_3_0266.jpg",
+    "vulkan_magazine.jpg",
+    "1E0A9856.jpg",
+    "1E0A9961.jpg",
     "look_1_842_full.jpg",
     "look_3_859_full.jpg",
     "look_2_855_full.jpg",
@@ -60,6 +70,15 @@ const mobile = [
     "look_7_897_full.jpg",
     "look_9_915_full.jpg"
   ], [
+    "3-2.jpg",
+    "5-3.jpg",
+    "3-1.jpg",
+    "7-4.jpg",
+    "shoreline-02.jpg",
+    "look_3_0215.jpg",
+    "1E0A9895.jpg",
+    "1E0A9861.jpg",
+    "1E0A9728.jpg",
     "look_1_845_full.jpg",
     "look_5_879_full.jpg",
     "look_2_850_full.jpg",
