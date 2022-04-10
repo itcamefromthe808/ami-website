@@ -1,5 +1,8 @@
 const { readFile, writeFile, copyFile } = require('fs/promises')
 const sharp = require('sharp')
+const editorials = require('./data/collections/editorials')
+const advertising = require('./data/collections/advertising')
+const stillLife = require('./data/collections/still-life')
 
 
 async function createManifest(files, manifest) {
@@ -23,15 +26,16 @@ async function createImage({ width, source, destination }) {
     console.log(`resizing: ${source} => ${destination}/${filename} (${ size } bytes)`)
 
     const outputPath = destination.split('/').slice(2)
+
     return {
       width,
       height,
-      output: `${outputPath.join('/')}/${filename}`, 
+      output: `${outputPath.join('/')}/${filename}`,
       full: `${outputPath.join('/')}/${raw}`
     }
 
   } catch( err ) {
-    console.log('createImage failed:', err)
+    console.log('createImage failed:', width, source, destination)
     return null
   }
   
@@ -49,50 +53,44 @@ function resizeImages( source, destination ) {
   return outputSizes.map( width => createImage({ width, source, destination }) )
 }
 
-async function addImagesToEntry( entry, collection ) {
-  const { full } = entry
-
-  const images = /\.jpg$/.test(full)? await Promise.all(
-    resizeImages(`./src/collections/${collection}/${full}`, `./public/collections/${collection}`)
+async function buildResponsiveImages( entry, collection ) {
+  return /\.jpg$/.test(entry)? await Promise.all(
+    resizeImages(`./src/collections/${collection}/${entry}`, `./public/collections/${collection}`)
   ) : [{
-    output: `/collections/${collection}/${full}`,
-    full: `/collections/${collection}/${full}`
+    output: `/collections/${collection}/${entry}`,
+    full: `/collections/${collection}/${entry}`
   }]
-
-  delete entry.full
-  delete entry.thumb
-  entry.images = images
 }
 
 
 // do the work
-const editorials = 'editorials'
-const currentWork = 'current-work'
-const stillLife = 'still-life'
 const testRun = 'test'
 const collections = [
   editorials,
-  currentWork,
+  advertising,
   stillLife
 ]
 
 
 // TODO: actually leverage async
-collections.map( async collection => {
+collections.map( async data => {
   try {
-    let desktop = JSON.parse( await readFile(`./data/collections/${collection}/desktop.json`) )
-    let mobile = JSON.parse( await readFile(`./data/collections/${collection}/mobile.json`) )
+    const { collection } = data
     
     // loop through the deep arrays and create additional images for each entry
-    await Promise.all([
-      ...desktop.map( async column => await Promise.all( column.map( async entry => {
-        const { full } = entry
-        await addImagesToEntry(entry, collection)
+    const desktop = await Promise.all([
+      ...data.desktop.map( async column => await Promise.all( column.map( async image => {
+
         // move the full size image over too
-        copyFile( `./src/collections/${collection}/${full}`, `./public/collections/${collection}/${full}` )
-      }))),
-      ...mobile.map( async column => await Promise.all( column.map( async entry => {
-        await addImagesToEntry(entry, collection)
+        copyFile( `./src/collections/${collection}/${image}`, `./public/collections/${collection}/${image}` )
+        
+        return await buildResponsiveImages(image, collection)
+      })))
+    ])
+
+    const mobile = await Promise.all([
+      ...data.mobile.map( async column => await Promise.all( column.map( async image => {
+        return await buildResponsiveImages(image, collection)
       })))
     ])
 

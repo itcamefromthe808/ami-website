@@ -1,17 +1,26 @@
+@import 'variables';
+
 .about {
-  display:grid;
-  grid-template-columns: 35% 65%;
-  grid-column-gap: 1.5rem;
+  // display:grid;
+  // grid-template-columns: 35% 65%;
+  // grid-column-gap: 1.5rem;
   margin-top:calc(2.5vh + 3rem);
 
   .img {
     display:block;
-    width:100%;
+    width:50%;
     height:auto;
+    margin: calc(2vh + 2rem) auto 0;
+
+    @media screen and (max-width: #{$mobile_width}px) {
+      width:80%;
+    }
   }
 
   .copy {
     text-align: center;
+    width: 70%;
+    margin: 0 auto;
 
     address {
       font-style:normal;

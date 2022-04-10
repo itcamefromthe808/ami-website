@@ -3,14 +3,14 @@ import Nav from '../src/Nav'
 import Footer from '../src/Footer'
 
 import editorials from '../data/collections/editorials'
-import currentWork from '../data/collections/current-work'
+import advertising from '../data/collections/advertising'
 import stillLife from '../data/collections/still-life'
 
 import '../src/sass/styles.scss'
 
 const collections = [
-  currentWork,
   editorials,
+  advertising,
   stillLife
 ]
 

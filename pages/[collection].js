@@ -1,11 +1,11 @@
 import Grid from '../src/Grid'
 import editorials from '../public/collections/editorials/manifest.json'
-import currentWork from '../public/collections/current-work/manifest.json'
+import advertising from '../public/collections/advertising/manifest.json'
 import stillLife from '../public/collections/still-life/manifest.json'
 
 const collections = [
-  currentWork,
   editorials,
+  advertising,
   stillLife
 ]
 

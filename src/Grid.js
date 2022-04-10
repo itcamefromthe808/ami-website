@@ -48,7 +48,7 @@ const Grid = props => {
         { columns.length? columns.map( (col, idx) => {
           return (
             <div className={css[`grid-column-${idx+1}`]} key={idx}>
-              { columns[idx].map( (entry,key) => <ResponsiveTile key={key} {...entry} /> ) }
+              { columns[idx].map( (entry,key) => <ResponsiveTile key={key} images={entry} /> ) }
             </div>
           )
         }) : null}
