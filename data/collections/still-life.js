@@ -11,7 +11,8 @@ const desktop = [
     "still_7_full.gif",
     "210907_TR_Socialflats_0223_full.jpg",
     "210907_TR_Socialflats_0162_full.jpg",
-    "210907_TR_Socialflats_0172_full.jpg",
+    "210907_TR_Socialflats_0172_full.jpg"
+  ], [
     "saint-jane-03.gif",
     "210313_SAINT_JANE_0782.jpg",
     "210313_SAINT_JANE_0957.jpg",
@@ -65,7 +66,9 @@ const mobile = [
   ]
 ]
 
-export default {
+module.exports = {
   nav,
-  collection
+  collection,
+  desktop,
+  mobile
 }

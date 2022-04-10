@@ -75,7 +75,7 @@ const mobile = [
   ]
 ]
  
-export default {
+module.exports = {
   nav,
   collection,
   desktop,
