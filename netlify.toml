@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/"
-  to = "/current-work"
+  from = "/current-work"
+  to = "/editorials"
   status = 301
   force = true
